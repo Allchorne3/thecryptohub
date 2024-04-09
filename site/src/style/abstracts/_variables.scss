@@ -9,7 +9,7 @@ $fs-5: 1.125rem; //18px
 $fs-6: 1rem; //16px
 $fs-7: .875rem; //14px
 
-$ff-body: "Cormorant Garamond", sans-serif;
+$ff-main: "Inter", sans-serif;
 $ff-heading: "Playfair Display", serif;
 
 $fw-300: 300;
@@ -20,3 +20,12 @@ $fw-900: 900;
 
 $clr-primary: coral;
 $clr-secondry: navy;
+$black: #2E2E2E;
+$white: #fefefe;
+
+// Border radius
+$br-medium: 14px;
+
+// Shadows
+$box-shadow-subtle: 0 0 7px 2px rgba(0,0,0,.1);
+$box-shadow-hard: 3px 3px 0 4px rgba(0,0,0,1);
