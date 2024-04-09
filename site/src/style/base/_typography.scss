@@ -3,6 +3,10 @@
 /* typgraphy */
 body {
     font-family: $ff-main;
-    height: 200vh;
+    color: $black;
 
+    h1 {
+        font-size: $fs-0;
+        line-height: 1.2;
+    }
 }

@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as *;
+
+.section {
+    &.is-medium {
+        padding: 6.5rem 3.5rem;
+    }
+
+    .hero {
+        &-body {
+            padding: 6.5rem 3.5rem;
+        }
+    }
+}
+
+.container {
+    max-width: 1440px;
+    margin-inline: auto;
+    
+    &.is-max-tablet {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+}

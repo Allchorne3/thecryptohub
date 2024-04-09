@@ -5,16 +5,18 @@
   /////////////////////// */
 
 #header {
-	background: $white;
+	background: rgba($white, .5);
+	backdrop-filter: blur(5px);
 	display: flex;
 	align-items: center;
 	margin: auto 4rem;
-	// max-width: 1440px;
 	border-radius: $br-medium;
 	padding: 1rem 2.5rem;
 	box-shadow: $box-shadow-subtle;
-	position: sticky;
+	position: fixed;
 	top: 2rem;
+	left: 4rem;
+	right: 4rem;
 
 	figure {
 		flex: 1;
