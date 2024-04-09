@@ -20,6 +20,11 @@
 
 	figure {
 		flex: 1;
+
+		// TEMPORARY UNTIL WE HAVE AN SVG LOGO
+		h2 {
+			font-size: 20px;
+		}
 	}
 
 	#nav {

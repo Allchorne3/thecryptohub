@@ -5,8 +5,33 @@ body {
     font-family: $ff-main;
     color: $black;
 
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1;
+
+        &.title {
+            text-transform: uppercase;
+        }
+    }
+
     h1 {
         font-size: $fs-0;
         line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: $fs-2;
+        line-height: 1;
+    }
+    
+    h3 {
+        font-size: $fs-3;
+        line-height: 1;
+    }
+
+    p {
+        &.subtitle {
+            font-family: $ff-accent;
+            font-size: $fs-5;
+        }
     }
 }

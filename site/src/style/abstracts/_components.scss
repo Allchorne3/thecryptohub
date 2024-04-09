@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+
+//Buttons
+.buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.button {
+    $parent: &;
+    padding: 0.625rem 1.56rem;
+    text-transform: uppercase;
+    border-radius: 14px;
+    display: inline-block;
+    color: $black;
+    font-size: $fs-7;
+
+    &-primary {
+        background: $clr-primary;
+    }
+
+    &-outline {
+        background: $white;
+    }
+}

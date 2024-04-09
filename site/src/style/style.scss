@@ -1,5 +1,6 @@
 @use 'abstracts/variables';
 @use 'abstracts/utility';
+@use 'abstracts/components';
 
 @use 'base/reset';
 @use 'base/typography';
@@ -9,3 +10,4 @@
 @use 'sections/header';
 @use 'sections/footer';
 @use 'sections/hero';
+@use 'sections/mvp';
