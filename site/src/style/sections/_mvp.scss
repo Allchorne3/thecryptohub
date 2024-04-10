@@ -1,56 +1,61 @@
 @use '../abstracts/variables' as *;
 
-.mvp {
-    margin-top: 2rem;
+#section-mvp {
+    background: #f7f7f7;
+    
+    .mvp {
+        margin-top: 2rem;
 
-    .card {
-        border-radius: $br-medium;
-        padding: 2rem;
-        padding-right: 0;
-        display: flex;
+        .card {
+            border-radius: $br-medium;
+            padding: 2rem;
+            padding-right: 0;
+            display: flex;
+            background: $white;
 
-        &-information,
-        &-image {
-            flex: 1;
-        }
+            &-information,
+            &-image {
+                flex: 1;
+            }
 
-        &-information {
-            border-right: solid 1px rgba($black, .1);
+            &-information {
+                border-right: solid 1px rgba($black, .1);
 
-            h3 {
-                display: flex;
-                align-items: center;
-                gap: .35rem;
-                margin-bottom: .8rem;
+                h3 {
+                    display: flex;
+                    align-items: center;
+                    gap: .35rem;
+                    margin-bottom: .8rem;
 
-                span {
-                    background: $black;
-                    color: $white;
-                    width: 30px;
-                    height: 30px;
-                    font-size: $fs-6;
-                    display: inline-grid;
-                    place-items: center;
-                    border-radius: 50%;
+                    span {
+                        background: $black;
+                        color: $white;
+                        width: 30px;
+                        height: 30px;
+                        font-size: $fs-6;
+                        display: inline-grid;
+                        place-items: center;
+                        border-radius: 50%;
+                    }
+                }
+
+                &__description {
+                    margin-top: 1rem;
+                    max-width: 300px;
                 }
             }
 
-            &__description {
-                margin-top: 1rem;
-                max-width: 300px;
-            }
-        }
+            &-image {
+                display: grid;
+                place-items: center;
 
-        &-image {
-            display: grid;
-            place-items: center;
+                figure.image {
+                    display: flex;
+                    justify-content: center;
 
-            figure.image {
-                display: flex;
-                justify-content: center;
-
-                img {
-                    max-width: 80%;
+                    img {
+                        max-width: 80%;
+                    }
                 }
             }
         }
