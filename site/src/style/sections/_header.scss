@@ -5,26 +5,42 @@
   /////////////////////// */
 
 #header {
-	background: rgba($white, .5);
-	backdrop-filter: blur(15px);
 	display: flex;
 	align-items: center;
 	margin: auto 4rem;
 	border-radius: $br-medium;
 	padding: 1rem 2.5rem;
-	box-shadow: $box-shadow-subtle;
 	position: fixed;
-	top: 2rem;
+	top: 3rem;
 	left: 4rem;
 	right: 4rem;
 	z-index: 99999999;
+	opacity: 0;
+	animation: fade 1s ease-in-out forwards;
+	animation-delay: 1s;
+	transition: all .5s ease-in-out;
+
+	html.is-scrolled & {
+		background: rgba($white, .5);
+		backdrop-filter: blur(15px);
+		box-shadow: $box-shadow-subtle;
+	}
 
 	figure {
 		flex: 1;
-
+		
 		// TEMPORARY UNTIL WE HAVE AN SVG LOGO
+		a {
+			text-decoration: none;
+		}
+		
 		h2 {
 			font-size: 20px;
+			color: $white;
+
+			html.is-scrolled & {
+				color: $black;
+			}
 		}
 	}
 
@@ -33,16 +49,22 @@
 			display: flex;
 			gap: 2.5rem;
 			list-style: none;
-			font-size: $fs-7;
+			font-size: $fs-6;
 		}
 
 		a {
-			color: $black;
 			text-decoration: none;
+			color: $white;
+			
+			html.is-scrolled & {
+				color: $black;
+			}
 		}
 	}
 }
 
-// [aria-current="page"] {
-// 	font-weight: bold;
-// }
+@keyframes fade {
+	to {
+		opacity: 1;
+	}
+}

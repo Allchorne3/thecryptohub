@@ -4,6 +4,10 @@
   General styling
   /////////////////////// */
 
+body {
+  background: $white;
+}
+
 figure.image {
   img {
     max-width: 100%;

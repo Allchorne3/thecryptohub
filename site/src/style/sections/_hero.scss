@@ -2,19 +2,14 @@
 
 .hero {
     height: 100vh;
-    background: $off-white;
-    padding: 2rem;
     
     &-body {
-        background: radial-gradient(circle, #34414E, #1B232A);
         background: 
             radial-gradient(farthest-side at bottom left,rgba(#7671F0, 0.5), transparent),
             radial-gradient(farthest-corner at top right,rgba(#2C5364, 1), transparent 1000px),
             radial-gradient(circle, #34414E, #1B232A);
     
         height: 100%;
-        border-radius: $br-large;
-
         display: grid;
         place-items: center;
         text-align: center;
@@ -23,6 +18,11 @@
             max-width: 1080px;
             color: $white;
 
+            h1, p, svg {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+            
             svg {
                 margin-bottom: 2rem;
             }
@@ -32,8 +32,32 @@
                 font-weight: $fw-300;
                 margin-bottom: 2rem;
 
-                span {
+                strong {
                     font-weight: $fw-900;
+
+                    &.special-text {
+                        animation: background-pan 6s linear infinite;
+                        background: linear-gradient(
+                            to right,
+                            #F55555,
+                            #FCCF31,
+                            #F55555
+                        );
+                        background-size: 200%;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        white-space: nowrap;
+                    }
+
+                    @keyframes background-pan {
+                        from {
+                            background-position: 0% center;
+                        }
+                        
+                        to {
+                            background-position: -200% center;
+                        }
+                    }
                 }
             }
 
