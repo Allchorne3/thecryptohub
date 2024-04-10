@@ -1,24 +1,47 @@
 @use '../abstracts/variables' as *;
 
 .hero {
-    height: 70vh;
-    display: grid;
-    place-items: center;
-
+    height: 100vh;
+    background: $off-white;
+    padding: 2rem;
+    
     &-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        background: radial-gradient(circle, #34414E, #1B232A);
+        background: 
+            radial-gradient(farthest-side at bottom left,rgba(#7671F0, 0.5), transparent),
+            radial-gradient(farthest-corner at top right,rgba(#2C5364, 1), transparent 1000px),
+            radial-gradient(circle, #34414E, #1B232A);
+    
+        height: 100%;
+        border-radius: $br-large;
+
+        display: grid;
+        place-items: center;
         text-align: center;
 
-        h1 {
-            max-width: 810px;
-            font-weight: $fw-500;
-            margin-bottom: 2rem;
-        }
+        .content {
+            max-width: 1080px;
+            color: $white;
 
-        p {
-            font-size: $fs-4;
+            svg {
+                margin-bottom: 2rem;
+            }
+
+            h1 {
+                font-size: $fs-huge;
+                font-weight: $fw-300;
+                margin-bottom: 2rem;
+
+                span {
+                    font-weight: $fw-900;
+                }
+            }
+
+            p {
+                font-size: $fs-5;
+                max-width: 710px;
+                margin-inline: auto;
+            }
         }
     }
 }

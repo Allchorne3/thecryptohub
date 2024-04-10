@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&family=Rockwell:wght@100;200;300;400;700;900&display=swap');
 
+$fs-huge: 4.5rem; // 72px
 $fs-0: 3.75rem; //60px
 $fs-1: 2.5rem; //40px
 $fs-2: 2rem; //32px;
@@ -25,9 +26,11 @@ $clr-primary: #B0D391;
 $clr-secondry: navy;
 $black: #2E2E2E;
 $white: #fefefe;
+$off-white: #F7F7F7;
 
 // Border radius
 $br-medium: 14px;
+$br-large: 2rem;
 
 // Shadows
 $box-shadow-subtle: 0 0 7px 2px rgba(0,0,0,.1);
