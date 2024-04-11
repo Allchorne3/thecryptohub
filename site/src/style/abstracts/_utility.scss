@@ -17,6 +17,35 @@
   max-width: 580px;
 }
 
+.platform {
+  &-good {
+    background-image:
+      radial-gradient(farthest-side at bottom left,rgba(#485C5B, 0.5), transparent),
+      radial-gradient(farthest-corner at top right,rgba(#7671F0, .5), transparent 1000px),
+      radial-gradient(circle, #34414E, #1B232A); 
+  }
+  &-bad {
+    background-image:
+      radial-gradient(farthest-side at bottom left,rgba(#485C5B, 0.5), transparent),
+      radial-gradient(farthest-corner at top right,rgba(#901E1E, .5), transparent 1000px),
+      radial-gradient(circle, #401010, #1B232A); 
+  }
+}
+
+.special-text {
+  animation: background-pan 6s linear infinite;
+  background: linear-gradient(
+      to right,
+      #F55555,
+      #FCCF31,
+      #F55555
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
 // PADDING
 .pt-0 { padding-top: 0 !important; }
 .pr-0 { padding-right: 0 !important; }

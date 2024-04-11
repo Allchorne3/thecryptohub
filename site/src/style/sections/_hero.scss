@@ -35,20 +35,6 @@
                 strong {
                     font-weight: $fw-900;
 
-                    &.special-text {
-                        animation: background-pan 6s linear infinite;
-                        background: linear-gradient(
-                            to right,
-                            #F55555,
-                            #FCCF31,
-                            #F55555
-                        );
-                        background-size: 200%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        white-space: nowrap;
-                    }
-
                     @keyframes background-pan {
                         from {
                             background-position: 0% center;

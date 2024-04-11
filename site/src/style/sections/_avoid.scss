@@ -15,22 +15,20 @@
         background: $antique-white;
     }
 
-    p.pre-title,
-    h2.title {
-        text-align: center;
-    }
-
     p.pre-title {
         font-weight: $fw-700;
         letter-spacing: 5px;
         text-transform: uppercase;
         margin-bottom: 1rem;
         font-size: $fs-3;
+        
+        &:before {
+            background: $white;
+        }
     }
 
     h2.title {
         color: $red;
-        text-align: center;
         font-weight: $fw-900;
         font-size: $fs-0;
         margin-bottom: 3rem;
@@ -41,10 +39,15 @@
         gap: 2rem;
 
         .card {
-            flex: 1;
-            background: $white;
             border-radius: $br-medium;
             height: 400px;
+            padding: 2rem;
+
+            figure.image {
+                img {
+                    max-height: 180px;
+                }
+            }
         }
     }
 }
