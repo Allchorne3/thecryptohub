@@ -16,8 +16,8 @@
     max-width: 1440px;
     margin-inline: auto;
     
-    &.is-max-tablet {
-        max-width: 800px;
+    &.is-max-widescreen {
+        max-width: 1440px;
         margin-inline: auto;
     }
 
@@ -25,4 +25,10 @@
         max-width: 1000px;
         margin-inline: auto;
     }
+    
+    &.is-max-tablet {
+        max-width: 800px;
+        margin-inline: auto;
+    }
+
 }

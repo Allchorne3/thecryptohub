@@ -22,6 +22,10 @@ figure.image {
 .swiper {
     width: 100%;
 
+    &-wrapper {
+        padding-bottom: 5rem;
+    }
+
     &-slide {
         border-radius: 18px;
     }
@@ -30,7 +34,7 @@ figure.image {
         &-prev,
         &-next {
             top: auto !important;
-            bottom: -4rem !important;
+            bottom: 0rem !important;
 
             svg {
                 width: 50% !important;
@@ -47,7 +51,7 @@ figure.image {
     }
 
     &-pagination {
-        bottom: -3rem !important;
+        bottom: .5rem !important;
 
         &-bullet {
         background: $white !important;
