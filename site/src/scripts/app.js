@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Dividers from "./dividers.js";
 import HackedText from "./hacker-text.js"
+import Swiper from "./swiper"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,15 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
     .to(document.querySelector('body'), {
-        backgroundColor: "#F5F1EC", // Set the 'd' attribute in the svg to be the value of finalPath
+        backgroundColor: "#202922", // Set the 'd' attribute in the svg to be the value of finalPath
         ease: "none" // Remove easing since the scrub will add a smooth delay
     })
-
-    // gsap.to(document.querySelector('body'), { duration: .6, ease: "power1.out", delay: 1.1})
 
     // Run functions
     Dividers.setupDividerAnimations()
     HackedText.hackerText()
+    Swiper.setupSwiper()
 })
 
 const addIsScrolledToHTML = (scrolled = 0) => {

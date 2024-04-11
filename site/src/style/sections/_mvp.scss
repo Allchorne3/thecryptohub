@@ -1,19 +1,41 @@
 @use '../abstracts/variables' as *;
 
-#section-mvp {    
-    .mvp {
-        margin-top: 2rem;
+#section-mvp {
+    height: 100vh;
+    color: $white;
 
+    p.pre-title,
+    h2.title {
+        text-align: center;
+    }
+    
+    p.pre-title {
+        font-weight: $fw-700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        font-size: $fs-3;
+    }
+    
+    h2.title {
+        font-weight: $fw-100;
+        font-size: $fs-0;
+        margin-bottom: 3rem;
+    }
+
+    .mvp {
         .card {
             border-radius: $br-medium;
             padding: 2rem;
             padding-right: 0;
             display: flex;
-            background: $white;
+            background: #FDF9F5;
+            color: $black;
 
             &-information,
             &-image {
                 flex: 1;
+                font-weight: $fw-400;
             }
 
             &-information {
@@ -55,6 +77,10 @@
                         max-width: 80%;
                     }
                 }
+            }
+
+            .buttons {
+                margin-top: 3rem;
             }
         }
     }

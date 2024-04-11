@@ -1,4 +1,3 @@
-
 const hackerText = () => {
     const textToHack = document.querySelectorAll('[data-text="hacked"]');
     const letters = "abcdefghijklmnopqrstuvwxyz";
