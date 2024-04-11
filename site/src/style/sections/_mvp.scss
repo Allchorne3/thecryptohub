@@ -1,7 +1,6 @@
 @use '../abstracts/variables' as *;
 
 #section-mvp {
-    height: 100vh;
     color: $white;
 
     p.pre-title,
@@ -26,7 +25,7 @@
     .mvp {
         .card {
             border-radius: $br-medium;
-            padding: 2rem;
+            padding: 3rem;
             padding-right: 0;
             display: flex;
             background: #FDF9F5;

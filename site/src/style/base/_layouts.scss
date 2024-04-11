@@ -20,4 +20,9 @@
         max-width: 800px;
         margin-inline: auto;
     }
+
+    &.is-max-htablet {
+        max-width: 1000px;
+        margin-inline: auto;
+    }
 }
