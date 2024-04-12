@@ -7,13 +7,13 @@ import 'swiper/css/bundle';
 const setupSwiper = () => {
     const swiper = new Swiper(".swiper", {
         slidesPerView: 4,
-        spaceBetween: 0,
+        spaceBetween: 30,
         loop: true,
 
-        autoplay: {
-            delay: 6000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 6000,
+        //     disableOnInteraction: false,
+        // },
 
         pagination: {
             el: ".swiper-pagination",
