@@ -4,17 +4,6 @@
     position: relative;
     color: $white;
 
-    &:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translate(-50%, -50%);
-        width: 90%;
-        height: 1px;
-        background: $antique-white;
-    }
-
     p.pre-title:before {
         background: $white;
     }

@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Dividers from "./dividers.js";
 import HackedText from "./hacker-text.js"
+import Modal from './modal';
 import setupSwiper from './swiper';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run functions
     Dividers.setupDividerAnimations()
     HackedText.hackerText()
+    Modal.setupModal()
     setupSwiper('.mvp-swiper', { slidesPerView: 4, loop: true })
     setupSwiper('.avoid-swiper', { slidesPerView: 3, loop: true })
     setupSwiper('.trust-swiper', { slidesPerView: 3, loop: true })

@@ -1,0 +1,75 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as m;
+
+.modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: 
+    opacity .3s ease,
+    z-index 0s .3s linear;
+}
+
+.modal-is-open .modal-overlay {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0s;
+}
+.modal {
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 4px;
+    background-color: var(--magenta-300);
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    min-width: 50vmin;
+    min-height: 50vmin;
+
+    .modal__content {
+        max-width: 800px;
+        background: $antique-white;
+        color: $black;
+        padding: 2rem;
+        border-radius: $br-medium;
+
+        p:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        ol li::marker {
+            font-weight: $fw-700;
+        }
+    }
+}
+
+.modal__close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .5rem 1.5rem;
+    font-size: $fs-6;
+    font-weight: $fw-700;
+    background: $olive;
+    color: $black;
+    z-index: 9;
+    border: none;
+    border-radius: 40px;
+    transition: background .3s ease-in-out;
+}
+
+.modal__close-button:hover,
+.modal__close-button:active,
+.modal__close-button:focus {
+    cursor: pointer;
+    background: darken($olive, 10%);
+}
