@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run functions
     Dividers.setupDividerAnimations()
     HackedText.hackerText()
-    setupSwiper('.mvp-swiper', { slidesPerView: 3, loop: true})
+    setupSwiper('.mvp-swiper', { slidesPerView: 4, loop: true })
     setupSwiper('.avoid-swiper', { slidesPerView: 3 })
 })
 
