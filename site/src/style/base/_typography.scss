@@ -68,4 +68,15 @@ body {
             }
         }
     }
+
+    .section-header {
+        text-align: center;
+        
+        h2 {
+            font-weight: $fw-300;
+            font-size: $fs-0;
+            margin-bottom: 3rem;
+            color: $white;
+        }
+    }
 }

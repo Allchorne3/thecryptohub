@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *;
+
+#section-trust {
+    // background: $black;
+    color: $white;
+
+    p.pre-title:before {
+        background: $green;
+    }
+
+    .trust-swiper {
+        padding-top: 1.5rem;
+    }
+
+    figure.proof {
+        max-width: 300px;
+        position: relative;
+
+        .platform {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            background: $green;
+            color: $black;
+            padding: .5rem 2rem;
+            font-size: $fs-4;
+            border-radius: 30px;
+            overflow-y: visible;
+        }
+    }
+}

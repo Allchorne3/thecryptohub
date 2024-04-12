@@ -46,11 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "none" // Remove easing since the scrub will add a smooth delay
     })
 
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: document.querySelector('#section-avoid'), // Use the divider as the trigger
+            start: '80% top', // Start the animation when the top of the path reaches the bottom of the viewport
+            end: 'center top', // End the animation when the bottom of the path reaches the top of the viewport
+            scrub: 1 // Add a delay of 1 second to the animation
+        }
+    })
+    .to(document.querySelector('body'), {
+        backgroundImage: "linear-gradient(90deg, #191c27, #25293d, #191c27)", // Set the 'd' attribute in the svg to be the value of finalPath
+        ease: "none" // Remove easing since the scrub will add a smooth delay
+    })
+
     // Run functions
     Dividers.setupDividerAnimations()
     HackedText.hackerText()
     setupSwiper('.mvp-swiper', { slidesPerView: 4, loop: true })
-    setupSwiper('.avoid-swiper', { slidesPerView: 3 })
+    setupSwiper('.avoid-swiper', { slidesPerView: 3, loop: true })
+    setupSwiper('.trust-swiper', { slidesPerView: 3, loop: true })
 })
 
 const addIsScrolledToHTML = (scrolled = 0) => {

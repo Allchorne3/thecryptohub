@@ -19,7 +19,7 @@ const setupDividerAnimations = () => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: path, // Use the divider as the trigger
-                start: 'top bottom', // Start the animation when the top of the path reaches the bottom of the viewport
+                start: 'top 80%', // Start the animation when the top of the path reaches the bottom of the viewport
                 end: 'bottom top', // End the animation when the bottom of the path reaches the top of the viewport
                 scrub: 1 // Add a delay of 1 second to the animation
             }
