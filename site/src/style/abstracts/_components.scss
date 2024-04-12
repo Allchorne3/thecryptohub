@@ -9,26 +9,36 @@
     a {
         text-decoration: none;
     }
-}
 
-.button {
-    padding: 0.625rem 1.56rem;
-    text-transform: uppercase;
-    border-radius: 10px;
-    display: inline-block;
-    color: $black;
-    font-size: $fs-7;
+    .button {
+        padding: 0.625rem 1.56rem;
+        // text-transform: uppercase;
+        border-radius: 40px;
+        display: inline-block;
+        color: $black;
+        font-size: $fs-7;
+        width: 100%;
+        text-align: center;
 
-    &-primary {
-        background: $clr-primary;
-    }
+        
+        &-primary {
+            background: $clr-primary;
+        }
+        
+        &-outline {
+            border: solid 1px $black;
+        }
 
-    &-outline {
-        border: solid 1px $black;
-    }
-
-    &:hover {
-        cursor: pointer;
+        &-big {
+            font-size: $fs-3;
+            font-weight: $fw-700;
+            padding: 1rem 2rem;
+            background: $green;
+        }
+    
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
