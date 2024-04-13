@@ -1,7 +1,12 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as m;
 
 .hero {
     height: 100vh;
+
+    // @include m.mobile {
+    //     height: fit-content;
+    // }
     
     &-body {
         background: 
@@ -24,7 +29,12 @@
             }
             
             svg {
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
+                max-width: 500px !important;
+                
+                @include m.desktop {
+                    max-width: 300px !important;
+                }
             }
 
             h1 {
@@ -34,16 +44,13 @@
 
                 strong {
                     font-weight: $fw-900;
+                }
 
-                    @keyframes background-pan {
-                        from {
-                            background-position: 0% center;
-                        }
-                        
-                        to {
-                            background-position: -200% center;
-                        }
-                    }
+                @include m.desktop {
+                    font-size: calc($fs-1 + .5rem);
+                }
+                @include m.mobile {
+                    font-size: $fs-2;
                 }
             }
 
@@ -51,6 +58,11 @@
                 font-size: $fs-5;
                 max-width: 710px;
                 margin-inline: auto;
+
+                @include m.mobile {
+                    font-size: $fs-6;
+                    line-height: 1.9;
+                }
             }
         }
     }

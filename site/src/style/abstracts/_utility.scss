@@ -72,3 +72,13 @@
 .mr-0 { margin-right: 0 !important; }
 .mb-0 { margin-bottom: 0 !important; }
 .ml-0 { margin-left: 0 !important; }
+
+@keyframes background-pan {
+  from {
+      background-position: 0% center;
+  }
+  
+  to {
+      background-position: -200% center;
+  }
+}
