@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		setupSwiper('.mvp-swiper', { 
 			slidesPerView: 1,
-			spaceBetween: 0,
 			loop: true,
 			breakpoints: {
 				699: {
@@ -42,11 +41,33 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 				1249: {
 					slidesPerView: 4,
-				},
+				}
 			},
 		})
-		setupSwiper('.avoid-swiper', { slidesPerView: 3, loop: true })
-		setupSwiper('.trust-swiper', { slidesPerView: 3, loop: true })
+		setupSwiper('.avoid-swiper', { 
+			slidesPerView: 1,
+			loop: true,
+			breakpoints: {
+				699: {
+					slidesPerView: 2,
+				},
+				1049: {
+					slidesPerView: 3,
+				}
+			},
+		})
+		setupSwiper('.trust-swiper', { 
+			slidesPerView: 1,
+			loop: true,
+			breakpoints: {
+				699: {
+					slidesPerView: 2,
+				},
+				899: {
+					slidesPerView: 3,
+				}
+			},
+		})
 	})
 })
 

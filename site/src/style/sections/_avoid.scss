@@ -13,19 +13,17 @@
         font-size: $fs-0;
     }
 
-    #avoid {
-        display: flex;
-        gap: 2rem;
+    // display: flex;
+    // gap: 2rem;
 
-        .card {
-            border-radius: $br-medium;
-            height: 400px;
-            padding: 2rem;
+    .card {
+        border-radius: $br-medium;
+        padding: 2rem;
 
-            figure.image {
-                img {
-                    max-height: 180px;
-                }
+        figure.image {
+            img {
+                max-height: 180px;
+                margin-bottom: 1rem;
             }
         }
     }

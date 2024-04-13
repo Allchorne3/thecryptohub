@@ -8,38 +8,4 @@
             color: $blue;
         }
     }
-
-    .swiper-slide {
-        .mvp {            
-            
-            a.text-link {
-                color: inherit;
-                text-decoration: underline;
-            }
-            
-            .card {
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
-                flex-direction: column-reverse;
-                max-width: 330px;
-                min-height: 390px;
-
-                span {
-                    position: absolute;
-                    top: -1.4rem;
-                    left: 0rem;
-                    font-size: 15rem;
-                    line-height: 1;
-                    font-weight: $fw-700;
-                    z-index: -1;
-                    opacity: .06;
-                }
-
-                &-image {
-                    flex: 1;
-                }
-            }
-        }
-    }
 }
