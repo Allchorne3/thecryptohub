@@ -23,7 +23,6 @@ title: Example
     </div>
 </section>
 
-{# MVP #}
 <section class="section is-medium" id="section-mvp">
     <div class="container is-max-widescreen">
         <div class="section-header">
@@ -350,6 +349,51 @@ title: Example
                 </svg>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="section is-medium" id="section-contact">
+    <div class="container is-max-tablet">
+        <div class="section-header">
+            <p class="pre-title">Contact</p>
+            <h2 class="title">Contact Details</h2>
+        </div>
+
+        <div class="two-col">
+            <div class="contact-form">
+                <h4><i class="fa-solid fa-envelope"></i> Send us a message</h4>
+                <form name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/success/" id="contact-form">
+                    <input class="hidden" name="bot-field">
+                    
+                    <input type="text" placeholder="Name*" name="name" required />
+                    <input type="email" placeholder="Email address*" name="email" required />
+                    <textarea cols="30" rows="5" placeholder="Message*" name="message" required></textarea>
+
+                    <div class="buttons">
+                        <input type="reset" value="Clear">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="contact-socials">
+                <div>
+                    <h4>Find us on Telegram</h4>
+
+                    <figure class="image qr">
+                        <img src="./assets/images/telegram-qr.svg" alt="Telegram QR Code">
+                    </figure>
+
+                    <a href="https://t.me/thecryptohub1" target="_blank" rel="noopener" class="telegram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                            <path d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25ZM25.9,18.456q-3.647,1.516-14.579,6.279-1.775.706-1.86,1.381c-.1.762.858,1.062,2.154,1.469.177.056.36.112.548.175a17.838,17.838,0,0,0,3.885.919,4.765,4.765,0,0,0,2.712-1q10.212-6.9,10.544-6.971a.574.574,0,0,1,.519.05.514.514,0,0,1,.117.442c-.1.4-3.833,3.879-5.771,5.679-.6.56-1.031.958-1.119,1.05-.2.2-.4.4-.588.581-1.187,1.142-2.075,2,.05,3.4,1.021.673,1.837,1.229,2.652,1.783.89.606,1.777,1.21,2.927,1.965.292.192.571.39.844.583a4.761,4.761,0,0,0,3.117,1.3c.667-.062,1.358-.69,1.708-2.562C34.583,30.548,36.212,20.956,36.59,17a4.4,4.4,0,0,0-.042-.983,1.054,1.054,0,0,0-.358-.677,1.631,1.631,0,0,0-.969-.292c-.94.017-2.381.519-9.325,3.406Z" fill="#30abe7"/>
+                        </svg>
+
+                        <p>https://t.me/thecryptohub1</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 

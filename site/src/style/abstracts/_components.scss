@@ -10,6 +10,10 @@
         text-decoration: none;
     }
 
+    & > *:hover {
+        cursor: pointer;
+    }
+
     .button {
         padding: 0.625rem 1.56rem;
         // text-transform: uppercase;
@@ -34,10 +38,6 @@
             font-weight: $fw-700;
             padding: 1rem 2rem;
             background: $green;
-        }
-    
-        &:hover {
-            cursor: pointer;
         }
     }
 }

@@ -1,0 +1,175 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as m;
+
+#section-contact {
+    background: $dark-black;
+
+    p.pre-title {
+        color: $blue;
+
+        &::before {
+            background: $white;
+        }
+    }
+
+    .two-col {
+        border-radius: $br-medium;
+        padding: 2rem;
+        padding-right: 0;
+        gap: 1rem;
+        background: rgba($antique-white, .9);
+
+        .contact {
+            &-form,  
+            &-socials {
+                flex: 1;
+
+                h4 {
+                    font-weight: $fw-300;
+                    color: $black;
+                    
+                    i {
+                        font-size: $fs-2;
+                        position: relative;
+                        top: 3px;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+
+            &-socials {
+                display: grid;
+                place-items: center;
+                color: $white;
+
+                div {
+                    text-align: center;
+                }
+
+                h5 {
+                    color: $black;
+                    margin-bottom: 2rem;
+                }
+
+                figure.qr {
+                    display: flex;
+                    justify-content: center;
+                    
+                    img {
+                        max-width: 200px;
+                    }
+                }
+
+                .telegram {
+                    $color: #D4D1CC;
+                    color: $black;
+                    display: flex;
+                    gap: .5rem;
+                    align-items: center;
+                    background: $color;
+                    padding: .5rem 1rem;
+                    border-radius: 50px;
+                    margin-top: 1rem;
+                    text-decoration: none;
+                    border: solid 3px $color;
+                    transition: border .3s ease-in-out;
+
+                    &:hover {
+                        border-color: $blue;
+                    }
+
+                    svg {
+                        max-width: 36px;
+                    }
+                }
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        grid-template-columns: 1fr;
+    
+        & > div {
+            text-align: left;
+            
+            label {
+                margin-top: 10px;
+                margin-bottom: 5px;
+                display: inline-block;
+                text-align: left;
+                font-weight: $fw-300;
+        
+                & > small {
+                    text-transform: lowercase;
+                }
+        
+                small {
+                    font-style: italic;
+                }
+            }
+    
+            &:last-child {
+                grid-column: 1 / -1 !important;
+            }
+        }
+
+        input,
+        textarea {
+            $color: #D4D1CC;
+            padding: 10px 15px;
+            background: $color;
+            transition: all 0.3s ease-in-out;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+
+            &::placeholder {
+                color: $black;
+            }
+            
+            &:focus,
+            &:active {
+                outline: none;
+            }
+    
+            &[type="submit"],
+            &[type="reset"] {
+                text-transform: uppercase;
+                font-weight: $fw-500;
+                margin-top: 1rem;
+            }
+    
+            &[type="reset"] {
+                $color: $off-white;
+                background: $color;
+                color: $dark-black !important;
+            
+                &:hover {
+                    background: darken($color, 10%);
+                }
+            }
+
+            &[type="submit"] {
+                $color: $green;
+                background: $color;
+                color: $dark-black !important;
+            
+                &:hover {
+                    background: darken($color, 10%);
+                }
+            }
+    
+            &[type="date"] {
+                color: $white;
+            }
+        }
+
+        .buttons {
+            margin-top: 0;
+            gap: 5px; 
+        }
+    }
+}
