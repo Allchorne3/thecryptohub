@@ -27,6 +27,7 @@
                 h4 {
                     font-weight: $fw-300;
                     color: $black;
+                    margin-bottom: 1.5rem;
                     
                     i {
                         font-size: $fs-2;
@@ -44,11 +45,6 @@
 
                 div {
                     text-align: center;
-                }
-
-                h5 {
-                    color: $black;
-                    margin-bottom: 2rem;
                 }
 
                 figure.qr {

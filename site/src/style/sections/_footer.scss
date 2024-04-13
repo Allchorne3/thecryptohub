@@ -1,16 +1,85 @@
 @use '../abstracts/variables' as *;
 
 /* //////////////////////
-  Footer
-  /////////////////////// */
+	Footer
+	/////////////////////// */
 
 #footer {
-  background-color: $dark-black;
-  color: $white;
-  padding: 2rem 0;
-  text-align: center;
-  
-  p:hover {
-    cursor: pointer;
-  }
+	color: $white;
+	padding: 4rem 6rem;
+	width: 100%;
+	display: flex;
+	border-top: solid 2px rgba($antique-white, .5);
+
+	.logo {
+		flex: 1;
+
+		svg {
+			#text {
+				path,
+				polygon {
+					fill: $antique-white;
+				}
+			}
+		}
+	}
+
+	.footer-links {
+		display: flex;
+
+		h5 {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: $fs-6;
+			padding-bottom: .5rem;
+			border-bottom: solid 1px rgba($antique-white, .3);
+		}
+
+		ul {
+			padding-left: 0;
+			list-style: none;
+
+			li {
+				a {
+					color: $white;
+					text-decoration: none;
+					font-size: $fs-7;
+					transition: color .2s ease-in-out;
+					color: rgba($white, .5);
+
+					i {
+						font-size: $fs-3;
+						position: relative;
+						top: 3px;
+						margin-right: .5rem;
+
+						&.fa-telegram {
+							margin-right: .25rem;
+							left: -3px;
+						}
+					}
+					
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+
+		.useful-links {
+			ul {
+				li {
+					margin-bottom: .5rem;
+				}
+			}
+		}
+
+		& > div:not(:last-child) {
+			margin-right: 4rem;
+		}
+	}
+	
+	p:hover {
+		cursor: pointer;
+	}
 }

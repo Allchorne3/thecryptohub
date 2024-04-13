@@ -7,6 +7,10 @@ const setupModal = () => {
         console.warn("No modal can be found")
         return
     }
+    if(!modalButton) {
+        console.warn("No modal trigger can be found")
+        return
+    }
     
     modalButton.addEventListener('click', function () {
         document.body.classList.add('modal-is-open')

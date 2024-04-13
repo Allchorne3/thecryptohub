@@ -18,3 +18,9 @@ figure.image {
     width: 100%;
     transform: translateY(-6.5px);
 }
+
+.logo {
+    figure.image svg {
+        max-width: 300px;
+    }
+}
