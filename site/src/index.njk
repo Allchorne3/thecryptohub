@@ -27,107 +27,33 @@ title: Example
 
         <div class="swiper mvp-swiper">
             <div class="swiper-wrapper">
+                {% for champ in collections.champs %}
                 <div class="swiper-slide">
                     <div class="mvp">
                         <div class="card platform-good">
                             <div class="card-information">
-                                <span>1</span>
-                                <h3 class="title">YIPTG</h3>
-                                <p><strong>Launched:</strong> Feb 18, 2024</p>
-                                <p><strong>Long-Term Investment Platform</strong></p>
+                                <span>{{ champ.data.order }}</span>
+                                <h3 class="title">{{ champ.data.title }}</h3>
+                                <p><strong>Launched:</strong> {{ champ.data.launchDate | prettyDate('MMM DD, YYYY') }}</p>
+                                <p><strong>{{ champ.data.platformType}}</strong></p>
 
                                 <div class="buttons">
-                                    <a href="#" class="button button-primary">Register now</a>
-                                    <a href="#" class="text-link">Click here to view more details</a>
+                                    <a href="{{ champ.data.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign Up now</a>
+                                    <a href="#section-compare" class="text-link">Click here to view more details</a>
                                 </div>
                             </div>
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="/assets/images/logos/yiptg.png" alt="YIPTG">
+                                    <img src="/assets/images/logos/{{ champ.data.title | kebab }}.png" alt="{{ champ.data.title }}">
                                 </figure>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="mvp">
-                        <div class="card platform-good">
-                            <div class="card-information">
-                                <span>2</span>
-                                <h3 class="title">Earn Worlds</h3>
-                                <p><strong>Launched:</strong> April 3, 2024</p>
-                                <p><strong>Long-Term Investment Platform</strong></p>
-
-                                <div class="buttons">
-                                    <a href="#" class="button button-primary">Register now</a>
-                                    <a href="#" class="text-link">Click here to view more details</a>
-                                </div>
-                            </div>
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="/assets/images/logos/earnworlds.png" alt="Earn Worlds">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mvp">
-                        <div class="card platform-good">
-                            <div class="card-information">
-                                <span>3</span>
-                                <h3 class="title">AKA</h3>
-                                <p><strong>Launched:</strong> Feb 23, 2024</p>
-                                <p><strong>Long-Term Investment Opportunity</strong></p>
-
-                                <div class="buttons">
-                                    <a href="#" class="button button-primary">Register now</a>
-                                    <a href="#" class="text-link">Click here to view more details</a>
-                                </div>
-                            </div>
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="/assets/images/logos/aka.png" alt="AKA">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="mvp">
-                        <div class="card platform-good">
-                            <div class="card-information">
-                                <span>4</span>
-                                <h3 class="title">Finopta</h3>
-                                <p><strong>Launched:</strong> October, 2023</p>
-                                <p><strong>Investment Plans with Daily Returns</strong></p>
-
-                                <div class="buttons">
-                                    <a href="#" class="button button-primary">Register now</a>
-                                    <a href="#" class="text-link">Click here to view more details</a>
-                                </div>
-                            </div>
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="/assets/images/logos/finopta.png" alt="Finopta">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-            <div class="swiper-pagination"></div>
 
-            <div class="swiper-button-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.621" height="22.243" viewBox="0 0 12.621 22.243">
-                    <path id="Icon_feather-chevron-left" data-name="Icon feather-chevron-left" d="M22.5,27l-9-9,9-9" transform="translate(-12 -6.879)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-                </svg>
-            </div>
-            <div class="swiper-button-next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.621" height="22.243" viewBox="0 0 12.621 22.243">
-                    <path id="Icon_feather-chevron-right" data-name="Icon feather-chevron-right" d="M13.5,27l9-9-9-9" transform="translate(-11.379 -6.879)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-                </svg>
-            </div>
+            {% include "swiper-pagination.njk" %}
         </div>
     </div>
 </section>
@@ -141,61 +67,25 @@ title: Example
 
         <div class="swiper avoid-swiper">
             <div class="swiper-wrapper">
+                {% for avoid in collections.avoids %}
                 <div class="swiper-slide">
                     <div class="card platform-bad">
                         <div class="card-information">
-                            <h3 class="title">Canaan</h3>
+                            <h3 class="title">{{ avoid.data.title }}</h3>
 
-                            <p class="card-information_description">Because I didn’t promote or build a team fast enough, this platform closed my account. I would NOT recommend signing up</p>
+                            <p class="card-information_description">{{ avoid.data.avoidDescription }}</p>
                         </div>
                         <div class="card-image">
                             <figure class="image">
-                                <img src="/assets/images/logos/canaan.png" alt="Finopta">
+                                <img src="/assets/images/logos/{{ avoid.data.title | kebab}}.png" alt="{{ avoid.data.title }}">
                             </figure>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="card platform-bad">
-                        <div class="card-information">
-                            <h3 class="title">Canaan</h3>
-
-                            <p class="card-information_description">Because I didn’t promote or build a team fast enough, this platform closed my account. I would NOT recommend signing up</p>
-                        </div>
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="/assets/images/logos/canaan.png" alt="Finopta">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card platform-bad">
-                        <div class="card-information">
-                            <h3 class="title">Canaan</h3>
-
-                            <p class="card-information_description">Because I didn’t promote or build a team fast enough, this platform closed my account. I would NOT recommend signing up</p>
-                        </div>
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="/assets/images/logos/canaan.png" alt="Finopta">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-            <div class="swiper-pagination"></div>
 
-            <div class="swiper-button-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.621" height="22.243" viewBox="0 0 12.621 22.243">
-                    <path id="Icon_feather-chevron-left" data-name="Icon feather-chevron-left" d="M22.5,27l-9-9,9-9" transform="translate(-12 -6.879)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-                </svg>
-            </div>
-            <div class="swiper-button-next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.621" height="22.243" viewBox="0 0 12.621 22.243">
-                    <path id="Icon_feather-chevron-right" data-name="Icon feather-chevron-right" d="M13.5,27l9-9-9-9" transform="translate(-11.379 -6.879)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-                </svg>
-            </div>
+            {% include "swiper-pagination.njk" %}
         </div>
     </div>
 </section>
@@ -205,62 +95,60 @@ title: Example
         <div class="tabby">
             <div class="tabs">
                 <ul role="list">
-                    <li><a href="#yiptg" data-target="yiptg" class="is-selected">Yiptg</a></li>
-                    <li><a href="#earnworlds" data-target="earn-worlds">Earn Worlds</a></li>
-                    <li><a href="#aka" data-target="aka">AKA</a></li>
-                    <li><a href="#finopta" data-target="finopta">Finopta</a></li>
+                    {% for tab in collections.champs %}
+                        <li>
+                            <a href="#{{ tab.data.title | kebab }}" data-target="{{ tab.data.title | kebab }}"{% if tab.data.order === 1 %} class="is-selected"{% endif %}>{{ tab.data.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
-
-                {# <ul role="list">
-                    <li><a href="#yiptg-key-features" data-target="yiptg-key-features" class="is-selected">Key Features</a></li>
-                    <li><a href="#yiptg-vip-tiers" data-target="yiptg-vip-tiers">VIP Tiers</a></li>
-                </ul> #}
             </div>
 
             <div class="tab-contents">
-                <div class="tab-content is-selected" id="yiptg">
-                    <div class="tiles">
+                {% for comparison in collections.champs %}
+                <div class="tab-content{% if comparison.data.order === 1 %} is-selected{% endif %}" id="{{ comparison.data.title | kebab }}">
+                    <div class="tiles{% if comparison.data.vipTiers %} has-tiers{% endif %}">
                         <div class="tile-title">
                             <header>
                                 <figure class="image">
-                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
+                                    <img src="./assets/images/logos/{{ comparison.data.title | kebab }}.png" alt="{{ comparison.data.title }}">
                                 </figure>
-                                <h3>YIPTG</h3>
+                                <h3>{{ comparison.data.title }}</h3>
                             </header>
                             
-                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
+                            <h4>{{ comparison.data.description }}</h4>
 
                             <div class="buttons">
-                                <a href="#" class="button button-big button-primary">Register now</a>
+                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Register now</a>
                             </div>
                         </div>
+
+                        {% if comparison.data.vipTiers %}
                         <div class="tile-vip-tiers">
                             <h4>VIP Tiers</h4>
-                            <p>YIPTG offers a tiered VIP system with increasing benefits based on your investment amount. These tiers include:</p>
+                            <p>{{ comparison.data.vipDescription }}</p>
 
                             <ol role="list">
+                                {% for vipTier in comparison.data.vipTiers %}
                                 <li>
-                                    <p><strong>VIP Tier 1:</strong> $30 - $500</p>
+                                    <p>
+                                        <strong>VIP Tier {{ vipTier.tier }}:</strong> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
                                 </li>
-                                <li>
-                                    <p><strong>VIP Tier 2:</strong> $500 - $3,000</p>
-                                </li>
-                                <li>
-                                    <p><strong>VIP Tier 3:</strong> $3,000 - $10,000 <br /> <em>(Soon To Be Opened)</em></p>
-                                </li>
+                                {% endfor %}
                             </ol>
                             
                             <div class="buttons mobile-only">
-                                <a href="#" class="button button-big button-primary">Register now</a>
+                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Register now</a>
                             </div>
                         </div>
+                        {% endif %}
 
                         <div class="tile-info-small">
                             <h4>Team Commissions and Referral Rewards:</h4>
-                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
+                            <p>{{ comparison.data.teamRewards }}</p>
                             
                             <div class="buttons mobile-only">
-                                <a href="#" class="button button-big button-primary">Register now</a>
+                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Register now</a>
                             </div>
                         </div>
 
@@ -269,231 +157,43 @@ title: Example
 
                             <div class="key-features">
                                 <ol role="list">
+                                    {% for keyFeature in comparison.data.keyFeatures %}
                                     <li>
-                                        <h5>Capital unlocked</h5>
-                                        <p>Access your invested capital at any time.</p>
+                                        <h5>{{ keyFeature.header }}</h5>
+                                        <p>{{ keyFeature.feature }}</p>
                                     </li>
-                                    <li>
-                                        <h5>Minimum Deposit</h5>
-                                        <p>Start with as little as $30.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Profit Potential</h5>
-                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Activity</h5>
-                                        <p>Requires daily interaction for profit.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Withdrawal</h5>
-                                        <p>Withdraw your earnings once they reach $10.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Withdrawal Fee</h5>
-                                        <p>A 5% fee applies to all withdrawals.</p>
-                                    </li>
+                                    {% endfor %}
                                 </ol>
 
                                 <div class="buttons mobile-only">
-                                    <a href="#" class="button button-big button-primary">Register now</a>
+                                    <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Register now</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="tile-links">
-                            <h4>Telegram</h4>
+                            <h4>{{ social.brand }}</h4>
                             
                             <ul role="list">
+                                {% for social in comparison.data.socials %}
                                 <li>
-                                    <h5>UK YIPTG</h5>
-                                    <a href="https://t.me/yiptguk" target="_blank" rel="noopener" class="social-link">
-                                        <i class="fa-brands fa-telegram"></i>
-                                        <p>/yiptguk</p>
+                                    <h5>{{ social.title }}</h5>
+                                    <a href="{{ social.link }}" target="_blank" rel="noopener" class="social-link">
+                                        <i class="fa-brands fa-{{ social.brand | kebab}}"></i>
+                                        <p>/{{ social.shortLink }}</p>
                                     </a>
                                 </li>
-                                <li>
-                                    <h5>Official YIPTG</h5>
-                                    <a href="https://t.me/yiptg" target="_blank" rel="noopener" class="social-link">
-                                        <i class="fa-brands fa-telegram"></i>
-                                        <p>/yiptg</p>
-                                    </a>
-                                </li>
+                                {% endfor %}
                             </ul>
 
+                            {% if comparison.data.website %}
                             <h4>Official Website</h4>
-                            <a href="https://yiptg.com/">https://yiptg.com/</a>
+                            <a href="{{ comparison.data.website }}">{{ comparison.data.website }}</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-                <div class="tab-content" id="earn-worlds">
-                    <div class="tiles">
-                        <div class="tile-title">
-                            <header>
-                                <figure class="image">
-                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
-                                </figure>
-                                <h3>Earn Worlds</h3>
-                            </header>
-                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
-                            <div class="buttons mobile-only">
-                                <a href="#" class="button button-primary">Register now</a>
-                            </div>
-                        </div>
-                        <div class="tile-info-small">
-                            <h4>Team Commissions and Referral Rewards:</h4>
-                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
-                        </div>
-                        <div class="tile-key-features">
-                            <h4>Key Features</h4>
-
-                            <div class="key-features">
-                                <ol>
-                                    <li>
-                                        <h5>Capital unlocked</h5>
-                                        <p>Access your invested capital at any time.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Deposit</h5>
-                                        <p>Start with as little as $30.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Profit Potential</h5>
-                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Activity</h5>
-                                        <p>Requires daily interaction for profit.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Withdrawal</h5>
-                                        <p>Withdraw your earnings once they reach $10.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Withdrawal Fee</h5>
-                                        <p>A 5% fee applies to all withdrawals.</p>
-                                    </li>
-                                </ol>
-
-                                <div class="buttons">
-                                    <a href="#" class="button button-big button-primary">Register now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-content" id="aka">
-                    <div class="tiles">
-                        <div class="tile-title">
-                            <header>
-                                <figure class="image">
-                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
-                                </figure>
-                                <h3>AKA</h3>
-                            </header>
-                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
-                            <div class="buttons mobile-only">
-                                <a href="#" class="button button-primary">Register now</a>
-                            </div>
-                        </div>
-                        <div class="tile-info-small">
-                            <h4>Team Commissions and Referral Rewards:</h4>
-                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
-                        </div>
-                        <div class="tile-key-features">
-                            <h4>Key Features</h4>
-
-                            <div class="key-features">
-                                <ol>
-                                    <li>
-                                        <h5>Capital unlocked</h5>
-                                        <p>Access your invested capital at any time.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Deposit</h5>
-                                        <p>Start with as little as $30.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Profit Potential</h5>
-                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Activity</h5>
-                                        <p>Requires daily interaction for profit.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Withdrawal</h5>
-                                        <p>Withdraw your earnings once they reach $10.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Withdrawal Fee</h5>
-                                        <p>A 5% fee applies to all withdrawals.</p>
-                                    </li>
-                                </ol>
-
-                                <div class="buttons">
-                                    <a href="#" class="button button-big button-primary">Register now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-content" id="finopta">
-                    <div class="tiles">
-                        <div class="tile-title">
-                            <header>
-                                <figure class="image">
-                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
-                                </figure>
-                                <h3>Finopta</h3>
-                            </header>
-                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
-                            <div class="buttons mobile-only">
-                                <a href="#" class="button button-primary">Register now</a>
-                            </div>
-                        </div>
-                        <div class="tile-info-small">
-                            <h4>Team Commissions and Referral Rewards:</h4>
-                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
-                        </div>
-                        <div class="tile-key-features">
-                            <h4>Key Features</h4>
-
-                            <div class="key-features">
-                                <ol>
-                                    <li>
-                                        <h5>Capital unlocked</h5>
-                                        <p>Access your invested capital at any time.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Deposit</h5>
-                                        <p>Start with as little as $30.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Profit Potential</h5>
-                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Daily Activity</h5>
-                                        <p>Requires daily interaction for profit.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Minimum Withdrawal</h5>
-                                        <p>Withdraw your earnings once they reach $10.</p>
-                                    </li>
-                                    <li>
-                                        <h5>Withdrawal Fee</h5>
-                                        <p>A 5% fee applies to all withdrawals.</p>
-                                    </li>
-                                </ol>
-
-                                <div class="buttons">
-                                    <a href="#" class="button button-big button-primary">Register now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

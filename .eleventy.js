@@ -1,6 +1,7 @@
 const htmlmin = require("html-minifier"); //minify html
 
 const prettyDate = require('./lib/pretty-date.js')
+const kebab = require('./lib/kebab.js');
 
 module.exports = function(eleventyConfig) {
 
@@ -10,9 +11,31 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addCollection("featuredPosts", collection => {
         return collection.getFilteredByTag("post").filter(item => item.data.featured);
     });
+    
+    // MVP Collection
+    eleventyConfig.addCollection("champs", function(collection) {
+        return collection.getFilteredByTag("champ").sort((a, b) => {
+            if ( a.data.order < b.data.order ){
+                return -1;
+            }
+            if ( a.data.order > b.data.order ){
+                return 1;
+            }
+            return 0;
+        });
+    });
+    
+    // Platforms to avoid
+    eleventyConfig.addCollection("avoids", collection => {
+        return collection.getFilteredByTag("avoid")
+    });
+
+    // Shortcodes
+    eleventyConfig.addShortcode("kebab", kebab);
 
     // Expose Nunjucks filters
     eleventyConfig.addFilter("prettyDate", prettyDate);
+    eleventyConfig.addFilter("kebab", kebab);
 
     // Automatically open up the browser on script runs
     eleventyConfig.setBrowserSyncConfig({

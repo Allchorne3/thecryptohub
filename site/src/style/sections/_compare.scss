@@ -41,20 +41,37 @@
             display: grid;
             grid-template-areas: 
                 "title keyFeatures"
-                "vipTiers keyFeatures"
+                "smallInfo keyFeatures"
                 "smallInfo links";
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            
-            @media (max-width: 820px) {
+
+            @include m.mobile {
                 grid-template-areas: 
                 "title"
                 "keyFeatures"
-                "vipTiers"
                 "smallInfo"
                 "links";
                 grid-template-columns: 1fr;
             }
+            
+            &.has-tiers {
+                grid-template-areas: 
+                "title keyFeatures"
+                "vipTiers keyFeatures"
+                "smallInfo links";
+                
+                @include m.mobile {
+                    grid-template-areas: 
+                    "title"
+                    "keyFeatures"
+                    "vipTiers"
+                    "smallInfo"
+                    "links";
+                    grid-template-columns: 1fr;
+                }
+            }
+            
 
             background: $white;
             padding: 1.5rem;
@@ -86,6 +103,7 @@
 
                         h3 {
                             font-size: $fs-2;
+                            margin-bottom: 0;
                         }
                     }
 
@@ -125,8 +143,10 @@
                         @include m.mobile {
                             grid-template-columns: 1fr;
                         }
-
+                        
                         li {
+                            margin-bottom: 1rem;
+
                             h5 {
                                 font-weight: $fw-400;
                             }

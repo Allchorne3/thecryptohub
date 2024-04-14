@@ -31,9 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		Animations.setupAnimations()
 		Tabs.setupTabs()
 
+		function countSwiperSlides(container) {
+			return document.querySelectorAll(`${container} .swiper-slide`).length;
+		}
+		console.log(countSwiperSlides('.mvp-swiper'))
+		
+
 		setupSwiper('.mvp-swiper', { 
 			slidesPerView: 1,
-			loop: true,
 			breakpoints: {
 				699: {
 					slidesPerView: 2,
@@ -42,13 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
 					slidesPerView: 3,
 				},
 				1249: {
-					slidesPerView: 4,
+					slidesPerView: countSwiperSlides('.mvp-swiper'),
 				}
 			},
 		})
 		setupSwiper('.avoid-swiper', { 
 			slidesPerView: 1,
-			loop: true,
 			breakpoints: {
 				699: {
 					slidesPerView: 2,
