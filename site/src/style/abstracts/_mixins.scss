@@ -40,3 +40,15 @@ $screen-sizes: (
         @content;
     }
 }
+
+@mixin until($until) {
+    @media screen and (max-width: $until) {
+        @content;
+    }
+}
+
+@mixin from($from) {
+    @media screen and (min-width: $from) {
+        @content;
+    }
+}

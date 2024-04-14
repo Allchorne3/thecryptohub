@@ -1,12 +1,13 @@
 ---
 order: 2
-title: Earn Worlds
+title: Earn World
 launchDate: 2024-04-03
 platformType: Long-Term Investment Platform
 referralLink: google.com
+proof: true
 tags: champ
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
-description: Earn Worlds offers a platform a professional automated trading service on INFRA software
+description: Earn World offers a platform a professional automated trading service on INFRA software
 
 vipTiers:
  - 

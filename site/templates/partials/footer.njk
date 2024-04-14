@@ -28,10 +28,9 @@
         <div class="referral-links">
             <h5>Referral Links</h5>
             <ul role="list">
-                <li><a href="#">YIPTG</a></li>
-                <li><a href="#">Earn Worlds</a></li>
-                <li><a href="#">AKA</a></li>
-                <li><a href="#">Finopta</a></li>
+                {% for referral in collections.champs %}
+                <li><a href="{{ referral.data.referralLink }}">{{ referral.data.title }}</a></li>
+                {% endfor %}
             </ul>
         </div>
     </div>

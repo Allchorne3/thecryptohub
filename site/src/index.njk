@@ -216,46 +216,21 @@ title: Example
             <h2 class="title">Proof of withdrawals</h2>
         </div>
 
-        <div class="swiper trust-swiper is-autos">
+        <div class="swiper trust-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <figure class="image proof">
-                        <span class="platform">YIPTG</span>
-                        <img src="/assets/images/kraken-proof.png" alt="Kraken proof of withdrawal">
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="image proof">
-                        <span class="platform">Vanguard Edge AI</span>
-                        <img src="/assets/images/kraken-proof.png" alt="Kraken proof of withdrawal">
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="image proof">
-                        <span class="platform">Aka</span>
-                        <img src="/assets/images/kraken-proof.png" alt="Kraken proof of withdrawal">
-                    </figure>
-                </div>
-                <div class="swiper-slide">
-                    <figure class="image proof">
-                        <span class="platform">Finopta</span>
-                        <img src="/assets/images/kraken-proof.png" alt="Kraken proof of withdrawal">
-                    </figure>
-                </div>
+                {% for proof in collections.champs %}
+                    {% if proof.data.proof %}
+                    <div class="swiper-slide">
+                        <figure class="image proof">
+                            <span class="platform">{{ proof.data.title }}</span>
+                            <img src="/assets/images/proof/{{ proof.data.title | kebab }}.png" alt="{{ proof.data.title }} proof of withdrawal">
+                        </figure>
+                    </div>
+                    {% endif %}
+                {% endfor %}
             </div>
             
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.621" height="22.243" viewBox="0 0 12.621 22.243">
-                    <path id="Icon_feather-chevron-left" data-name="Icon feather-chevron-left" d="M22.5,27l-9-9,9-9" transform="translate(-12 -6.879)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-                </svg>
-            </div>
-            <div class="swiper-button-next">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12.621" height="22.243" viewBox="0 0 12.621 22.243">
-                    <path id="Icon_feather-chevron-right" data-name="Icon feather-chevron-right" d="M13.5,27l9-9-9-9" transform="translate(-11.379 -6.879)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-                </svg>
-            </div>
+            {% include "swiper-pagination.njk" %}
         </div>
     </div>
 </section>
