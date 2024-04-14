@@ -5,13 +5,11 @@
   /////////////////////// */
 
 #header {
-	display: none !important;
-
 	display: flex;
 	align-items: center;
 	margin: auto 4rem;
 	border-radius: $br-medium;
-	padding: 1rem 2.5rem;
+	padding: 2rem 2.5rem;
 	position: fixed;
 	top: 3rem;
 	left: 4rem;
@@ -28,17 +26,22 @@
 		box-shadow: $box-shadow-subtle;
 	}
 
-	figure {
+	.logo {
 		flex: 1;
 		
-		h2 {
-			font-size: 20px;
-			color: $white;
+		svg {
+			max-width: 200px;
 
 			html.is-scrolled & {
-				color: $black;
+				#text {
+					path,
+					polygon {
+						fill: $black;
+					}
+				} 
 			}
 		}
+		
 	}
 
 	#nav {

@@ -70,19 +70,6 @@
                         max-width: 200px;
                     }
                 }
-
-                .social-link {
-                    $color: #D4D1CC;
-                    justify-content: center;
-                    padding: .5rem 1rem;
-                    border: solid 3px $color;
-                    background: $color;
-                    margin-top: 1rem;
-                    
-                    &:hover {
-                        border-color: $blue;
-                    }
-                }
             }
         }
     }

@@ -4,6 +4,10 @@
     General styling
   /////////////////////// */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: $white;
 }
@@ -20,9 +24,12 @@ figure.image {
 }
 
 .logo {
-    figure.image svg {
-        max-width: 300px;
-    }
+    figure.image {
+        svg {
+            max-width: 300px;
+            display: block;
+        }
+    }  
 }
 
 ol {
@@ -63,7 +70,8 @@ ol {
     }
 }
 
-.social-link {
+.social-link,
+.resource-link {
     display: flex;
     gap: .5rem;
     align-items: center;
@@ -84,4 +92,11 @@ ol {
             color: #30abe7;
         }
     } 
+}
+
+.is-page-anchor {
+    display: block;
+    font-size: 0;
+    position: relative;
+    top: -152px;
 }

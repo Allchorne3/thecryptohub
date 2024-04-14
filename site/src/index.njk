@@ -18,6 +18,7 @@ title: Example
     </div>
 </section>
 
+<a id="champs" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-mvp">
     <div class="container is-max-widescreen">
         <div class="section-header">
@@ -58,6 +59,7 @@ title: Example
     </div>
 </section>
 
+<a id="avoid" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-avoid">
     <div class="container is-max-htablet">
         <div class="section-header">
@@ -100,6 +102,7 @@ title: Example
     </svg>
 </div>
 
+<a id="compare" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-compare">
     <div class="container is-max-htablet">
         <div class="section-header">
@@ -187,8 +190,6 @@ title: Example
                         </div>
 
                         <div class="tile-links">
-                            <h4>{{ social.brand }}</h4>
-                            
                             <ul role="list">
                                 {% for social in comparison.data.socials %}
                                 <li>
@@ -204,6 +205,21 @@ title: Example
                             {% if comparison.data.website %}
                             <h4>Official Website</h4>
                             <a href="{{ comparison.data.website }}">{{ comparison.data.website }}</a>
+                            {% endif %}
+
+                            {% if comparison.data.resources %}
+                            <h4>Resources</h4>
+                            <ul role="list">
+                                {% for resource in comparison.data.resources %}
+                                <li>
+                                    {# <h5>{{ resource.icon }}</h5> #}
+                                    <a href="{{ resource.link }}" target="_blank" rel="noopener" class="resource-link">
+                                        <i class="{{ resource.icon }}"></i>
+                                        {{ resource.name }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
                             {% endif %}
                         </div>
                     </div>
@@ -224,6 +240,7 @@ title: Example
     </svg>
 </div>
 
+<a id="trust" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-trust">
     <div class="container is-max-htablet">
         <div class="section-header">
@@ -250,6 +267,7 @@ title: Example
     </div>
 </section>
 
+<a id="contact" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-contact">
     <div class="container is-max-tablet">
         <div class="section-header">

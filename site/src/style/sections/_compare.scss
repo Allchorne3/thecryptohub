@@ -50,7 +50,6 @@
                     }
                     
                     @include m.tablet {
-                        // background: red;
                         display: block;
                         width: 100%;
                         padding: .75rem 1rem;
@@ -161,13 +160,17 @@
                     grid-area: links;
 
                     h4 {
-                        margin-bottom: .5rem;
+                        margin-bottom: .15rem;
+
+                        &:not(:first-of-type) {
+                            margin-top: 1rem;
+                        }
                     }
 
                     ul {
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
-                        margin-bottom: 1rem;
+                        // margin-bottom: 1rem;
                         
                         @include m.mobile {
                             grid-template-columns: 1fr;
@@ -179,6 +182,12 @@
                             h5 {
                                 font-weight: $fw-400;
                             }
+                        }
+                    }
+
+                    .resource-link {
+                        i {
+                            font-size: $fs-2;
                         }
                     }
                 }
