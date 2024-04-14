@@ -29,13 +29,18 @@ setupSwiper('.avoid-swiper', { slidesPerView: 2 })
 */
 
 // import Swiper bundle with all modules installed
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper/bundle'
 
 // import styles bundle
-import 'swiper/css/bundle';
+import 'swiper/css/bundle'
 
 const setupSwiper = (container, options) => {
-    const swiperContainer = document.querySelector(`${container}`);
+    const swiperContainer = document.querySelector(`${container}`)
+    
+    // if(container) {
+    //     console.warn("No swiper container can be found")
+    //     return;
+    // }
     
     const swiperOptions = {
         ...options,
@@ -58,8 +63,8 @@ const setupSwiper = (container, options) => {
         }
     }
 
-    const swiper = new Swiper(container, swiperOptions);
+    const swiper = new Swiper(container, swiperOptions)
 }
 
-export default setupSwiper;
+export default setupSwiper
 

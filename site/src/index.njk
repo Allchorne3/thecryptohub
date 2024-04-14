@@ -139,18 +139,6 @@ title: Example
             <h2 class="title special-text">Who should I avoid?</h2>
         </div>
 
-            {# <div class="card platform-bad">
-                <div class="card-image">
-                    <figure class="image">
-                        <img src="/assets/images/logos/canaan.png" alt="Finopta">
-                    </figure>
-                </div>
-                <div class="card-information">
-                    <h3 class="title">Canaan</h3>
-
-                    <p class="card-information_description">Because I didn’t promote or build a team fast enough, this platform closed my account. I would NOT recommend signing up</p>
-                </div>
-            </div> #}
         <div class="swiper avoid-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -212,69 +200,296 @@ title: Example
     </div>
 </section>
 
-{# <section class="section is-medium" id="section-compare">
+<section class="section is-medium" id="section-compare">
     <div class="container is-max-htablet">
-        <div class="tabs">
-            <ul>
-                <li><a href="#yiptg" class="is-active">Yiptg</a></li>
-                <li><a href="#earnworlds">Earn Worlds</a></li>
-                <li><a href="#aka">AKA</a></li>
-                <li><a href="#finopta">Finopta</a></li>
-            </ul>
-        </div>
+        <div class="tabby">
+            <div class="tabs">
+                <ul role="list">
+                    <li><a href="#yiptg" data-target="yiptg" class="is-selected">Yiptg</a></li>
+                    <li><a href="#earnworlds" data-target="earn-worlds">Earn Worlds</a></li>
+                    <li><a href="#aka" data-target="aka">AKA</a></li>
+                    <li><a href="#finopta" data-target="finopta">Finopta</a></li>
+                </ul>
 
-        <div class="tab-content">
-            <div id="yiptg">
-                <div class="tiles">
-                    <div class="tile-title">
-                        <header>
-                            <figure class="image">
-                                <img src="./assets/images/yiptg.png" alt="YIPTG">
-                            </figure>
-                            <h3>YIPTG</h3>
-                        </header>
-                        <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
-                        <div class="buttons mobile-only">
-                            <a href="#" class="button button-primary">Register now</a>
-                        </div>
-                    </div>
-                    <div class="tile-info-small">
-                        <h4>Team Commissions and Referral Rewards:</h4>
-                        <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
-                    </div>
-                    <div class="tile-key-features">
-                        <h4>Key Features</h4>
+                {# <ul role="list">
+                    <li><a href="#yiptg-key-features" data-target="yiptg-key-features" class="is-selected">Key Features</a></li>
+                    <li><a href="#yiptg-vip-tiers" data-target="yiptg-vip-tiers">VIP Tiers</a></li>
+                </ul> #}
+            </div>
 
-                        <div class="key-features">
-                            <ol>
-                                <li>
-                                    <h5>Capital unlocked</h5>
-                                    <p>Access your invested capital at any time.</p>
-                                </li>
-                                <li>
-                                    <h5>Minimum Deposit</h5>
-                                    <p>Start with as little as $30.</p>
-                                </li>
-                                <li>
-                                    <h5>Daily Profit Potential</h5>
-                                    <p>Earn daily returns ranging from 2% to 4.3%.</p>
-                                </li>
-                                <li>
-                                    <h5>Daily Activity</h5>
-                                    <p>Requires daily interaction for profit.</p>
-                                </li>
-                                <li>
-                                    <h5>Minimum Withdrawal</h5>
-                                    <p>Withdraw your earnings once they reach $10.</p>
-                                </li>
-                                <li>
-                                    <h5>Withdrawal Fee</h5>
-                                    <p>A 5% fee applies to all withdrawals.</p>
-                                </li>
-                            </ol>
+            <div class="tab-contents">
+                <div class="tab-content is-selected" id="yiptg">
+                    <div class="tiles">
+                        <div class="tile-title">
+                            <header>
+                                <figure class="image">
+                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
+                                </figure>
+                                <h3>YIPTG</h3>
+                            </header>
+                            
+                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
 
                             <div class="buttons">
                                 <a href="#" class="button button-big button-primary">Register now</a>
+                            </div>
+                        </div>
+                        <div class="tile-vip-tiers">
+                            <h4>VIP Tiers</h4>
+                            <p>YIPTG offers a tiered VIP system with increasing benefits based on your investment amount. These tiers include:</p>
+
+                            <ol role="list">
+                                <li>
+                                    <p><strong>VIP Tier 1:</strong> $30 - $500</p>
+                                </li>
+                                <li>
+                                    <p><strong>VIP Tier 2:</strong> $500 - $3,000</p>
+                                </li>
+                                <li>
+                                    <p><strong>VIP Tier 3:</strong> $3,000 - $10,000 <br /> <em>(Soon To Be Opened)</em></p>
+                                </li>
+                            </ol>
+                            
+                            <div class="buttons mobile-only">
+                                <a href="#" class="button button-big button-primary">Register now</a>
+                            </div>
+                        </div>
+
+                        <div class="tile-info-small">
+                            <h4>Team Commissions and Referral Rewards:</h4>
+                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
+                            
+                            <div class="buttons mobile-only">
+                                <a href="#" class="button button-big button-primary">Register now</a>
+                            </div>
+                        </div>
+
+                        <div class="tile-key-features">
+                            <h4>Key Features</h4>
+
+                            <div class="key-features">
+                                <ol role="list">
+                                    <li>
+                                        <h5>Capital unlocked</h5>
+                                        <p>Access your invested capital at any time.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Deposit</h5>
+                                        <p>Start with as little as $30.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Profit Potential</h5>
+                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Activity</h5>
+                                        <p>Requires daily interaction for profit.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Withdrawal</h5>
+                                        <p>Withdraw your earnings once they reach $10.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Withdrawal Fee</h5>
+                                        <p>A 5% fee applies to all withdrawals.</p>
+                                    </li>
+                                </ol>
+
+                                <div class="buttons mobile-only">
+                                    <a href="#" class="button button-big button-primary">Register now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tile-links">
+                            <h4>Telegram</h4>
+                            
+                            <ul role="list">
+                                <li>
+                                    <h5>UK YIPTG</h5>
+                                    <a href="https://t.me/yiptguk" target="_blank" rel="noopener" class="social-link">
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <p>/yiptguk</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <h5>Official YIPTG</h5>
+                                    <a href="https://t.me/yiptg" target="_blank" rel="noopener" class="social-link">
+                                        <i class="fa-brands fa-telegram"></i>
+                                        <p>/yiptg</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <h4>Official Website</h4>
+                            <a href="https://yiptg.com/">https://yiptg.com/</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="earn-worlds">
+                    <div class="tiles">
+                        <div class="tile-title">
+                            <header>
+                                <figure class="image">
+                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
+                                </figure>
+                                <h3>Earn Worlds</h3>
+                            </header>
+                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
+                            <div class="buttons mobile-only">
+                                <a href="#" class="button button-primary">Register now</a>
+                            </div>
+                        </div>
+                        <div class="tile-info-small">
+                            <h4>Team Commissions and Referral Rewards:</h4>
+                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
+                        </div>
+                        <div class="tile-key-features">
+                            <h4>Key Features</h4>
+
+                            <div class="key-features">
+                                <ol>
+                                    <li>
+                                        <h5>Capital unlocked</h5>
+                                        <p>Access your invested capital at any time.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Deposit</h5>
+                                        <p>Start with as little as $30.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Profit Potential</h5>
+                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Activity</h5>
+                                        <p>Requires daily interaction for profit.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Withdrawal</h5>
+                                        <p>Withdraw your earnings once they reach $10.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Withdrawal Fee</h5>
+                                        <p>A 5% fee applies to all withdrawals.</p>
+                                    </li>
+                                </ol>
+
+                                <div class="buttons">
+                                    <a href="#" class="button button-big button-primary">Register now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="aka">
+                    <div class="tiles">
+                        <div class="tile-title">
+                            <header>
+                                <figure class="image">
+                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
+                                </figure>
+                                <h3>AKA</h3>
+                            </header>
+                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
+                            <div class="buttons mobile-only">
+                                <a href="#" class="button button-primary">Register now</a>
+                            </div>
+                        </div>
+                        <div class="tile-info-small">
+                            <h4>Team Commissions and Referral Rewards:</h4>
+                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
+                        </div>
+                        <div class="tile-key-features">
+                            <h4>Key Features</h4>
+
+                            <div class="key-features">
+                                <ol>
+                                    <li>
+                                        <h5>Capital unlocked</h5>
+                                        <p>Access your invested capital at any time.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Deposit</h5>
+                                        <p>Start with as little as $30.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Profit Potential</h5>
+                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Activity</h5>
+                                        <p>Requires daily interaction for profit.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Withdrawal</h5>
+                                        <p>Withdraw your earnings once they reach $10.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Withdrawal Fee</h5>
+                                        <p>A 5% fee applies to all withdrawals.</p>
+                                    </li>
+                                </ol>
+
+                                <div class="buttons">
+                                    <a href="#" class="button button-big button-primary">Register now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="finopta">
+                    <div class="tiles">
+                        <div class="tile-title">
+                            <header>
+                                <figure class="image">
+                                    <img src="./assets/images/yiptg.png" alt="YIPTG">
+                                </figure>
+                                <h3>Finopta</h3>
+                            </header>
+                            <h4>YIPTG offers a platform designed for long-term investment opportunities.</h4>
+                            <div class="buttons mobile-only">
+                                <a href="#" class="button button-primary">Register now</a>
+                            </div>
+                        </div>
+                        <div class="tile-info-small">
+                            <h4>Team Commissions and Referral Rewards:</h4>
+                            <p>The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website.</p>
+                        </div>
+                        <div class="tile-key-features">
+                            <h4>Key Features</h4>
+
+                            <div class="key-features">
+                                <ol>
+                                    <li>
+                                        <h5>Capital unlocked</h5>
+                                        <p>Access your invested capital at any time.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Deposit</h5>
+                                        <p>Start with as little as $30.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Profit Potential</h5>
+                                        <p>Earn daily returns ranging from 2% to 4.3%.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Daily Activity</h5>
+                                        <p>Requires daily interaction for profit.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Minimum Withdrawal</h5>
+                                        <p>Withdraw your earnings once they reach $10.</p>
+                                    </li>
+                                    <li>
+                                        <h5>Withdrawal Fee</h5>
+                                        <p>A 5% fee applies to all withdrawals.</p>
+                                    </li>
+                                </ol>
+
+                                <div class="buttons">
+                                    <a href="#" class="button button-big button-primary">Register now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -282,9 +497,9 @@ title: Example
             </div>
         </div>
     </div>
-</section> #}
+</section>
 
-{# <div class="is-divider">
+<div class="is-divider">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920.878 114.895" class="divider">
         <path
         element="path-to-animate"
@@ -292,7 +507,7 @@ title: Example
         final-path="M4276,2726.413H6196.878v114.895s-959.106-153.2-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z" 
         transform="translate(-4276 -2726.413)" fill="#fcf9f5"/>
     </svg>
-</div> #}
+</div>
 
 <section class="section is-medium" id="section-trust">
     <div class="container is-max-htablet">
@@ -345,7 +560,7 @@ title: Example
     </div>
 </section>
 
-{# <section class="section is-medium" id="section-contact">
+<section class="section is-medium" id="section-contact">
     <div class="container is-max-tablet">
         <div class="section-header">
             <p class="pre-title">Contact</p>
@@ -376,19 +591,19 @@ title: Example
                         <img src="./assets/images/telegram-qr.svg" alt="Telegram QR Code">
                     </figure>
 
-                    <a href="https://t.me/thecryptohub1" target="_blank" rel="noopener" class="telegram">
+                    <a href="https://t.me/thecryptohub1" target="_blank" rel="noopener" class="social-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
                             <path d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25ZM25.9,18.456q-3.647,1.516-14.579,6.279-1.775.706-1.86,1.381c-.1.762.858,1.062,2.154,1.469.177.056.36.112.548.175a17.838,17.838,0,0,0,3.885.919,4.765,4.765,0,0,0,2.712-1q10.212-6.9,10.544-6.971a.574.574,0,0,1,.519.05.514.514,0,0,1,.117.442c-.1.4-3.833,3.879-5.771,5.679-.6.56-1.031.958-1.119,1.05-.2.2-.4.4-.588.581-1.187,1.142-2.075,2,.05,3.4,1.021.673,1.837,1.229,2.652,1.783.89.606,1.777,1.21,2.927,1.965.292.192.571.39.844.583a4.761,4.761,0,0,0,3.117,1.3c.667-.062,1.358-.69,1.708-2.562C34.583,30.548,36.212,20.956,36.59,17a4.4,4.4,0,0,0-.042-.983,1.054,1.054,0,0,0-.358-.677,1.631,1.631,0,0,0-.969-.292c-.94.017-2.381.519-9.325,3.406Z" fill="#30abe7"/>
                         </svg>
 
-                        <p>https://t.me/thecryptohub1</p>
+                        <p>thecryptohub1</p>
                     </a>
                 </div>
             </div>
         </div>
 
     </div>
-</section> #}
+</section>
 
 <div class="modal-overlay jsModalOverlay">
     <div class="modal">

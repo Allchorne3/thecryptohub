@@ -4,6 +4,10 @@
 #section-contact {
     background: $dark-black;
 
+    @include m.mobile {
+        padding-top: 4rem;
+    }
+
     p.pre-title {
         color: $blue;
 
@@ -13,11 +17,18 @@
     }
 
     .two-col {
+        display: flex;
+        gap: 1rem;
         border-radius: $br-medium;
         padding: 2rem;
         padding-right: 0;
-        gap: 1rem;
         background: rgba($antique-white, .9);
+
+        @include m.tablet {
+            flex-direction: column-reverse;
+            padding-right: 2rem;
+            gap: 2rem;
+        }
 
         .contact {
             &-form,  
@@ -34,6 +45,10 @@
                         position: relative;
                         top: 3px;
                         margin-right: .5rem;
+                    }
+
+                    @include m.mobile {
+                        font-size: $fs-4;
                     }
                 }
             }
@@ -56,26 +71,16 @@
                     }
                 }
 
-                .telegram {
+                .social-link {
                     $color: #D4D1CC;
-                    color: $black;
-                    display: flex;
-                    gap: .5rem;
-                    align-items: center;
-                    background: $color;
+                    justify-content: center;
                     padding: .5rem 1rem;
-                    border-radius: 50px;
-                    margin-top: 1rem;
-                    text-decoration: none;
                     border: solid 3px $color;
-                    transition: border .3s ease-in-out;
-
+                    background: $color;
+                    margin-top: 1rem;
+                    
                     &:hover {
                         border-color: $blue;
-                    }
-
-                    svg {
-                        max-width: 36px;
                     }
                 }
             }

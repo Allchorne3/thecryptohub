@@ -24,3 +24,64 @@ figure.image {
         max-width: 300px;
     }
 }
+
+ol {
+    flex: 1;
+    margin-block: 0;
+
+    counter-reset: item;
+    
+    li {
+        position: relative;
+        isolation: isolate;
+        padding-left: .8rem;
+
+        display: block;
+        margin-bottom: .5em;
+        margin-left: 2em;
+
+
+        &::before {
+            content: counter(item);
+            counter-increment: item;
+            position: absolute;
+            display: grid;
+            place-items: center;
+            left: -10px;
+            top: 9px;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: $olive;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.social-link {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    color: $black;
+    border-radius: 50px;
+    transition: border .3s ease-in-out;
+
+    svg {
+        max-width: 36px;
+    }
+}
+
+.fa-brands {
+    font-size: 36px;
+
+    &.fa {
+        &-telegram {
+            color: #30abe7;
+        }
+    } 
+}

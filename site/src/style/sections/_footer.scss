@@ -22,6 +22,7 @@
 	@include m.mobile {
 		align-items: start;
 		text-align: left;
+		padding: 3rem;
 	}
 
 	.logo {
@@ -41,7 +42,7 @@
 		display: flex;
 
 		@include m.mobile {
-			flex-direction: column;
+			gap: 2rem;
 		}
 
 		h5 {
@@ -53,9 +54,6 @@
 		}
 
 		ul {
-			padding-left: 0;
-			list-style: none;
-
 			li {
 				a {
 					color: $white;
@@ -87,8 +85,15 @@
 			ul {
 				li {
 					margin-bottom: .5rem;
+					
+					a {
+						&:hover {
+							cursor: pointer;
+						}
+					}
 				}
 			}
+			
 		}
 
 		
@@ -102,7 +107,4 @@
 		}
 	}
 	
-	p:hover {
-		cursor: pointer;
-	}
 }

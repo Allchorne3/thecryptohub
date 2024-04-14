@@ -46,7 +46,7 @@
                     font-size: calc($fs-1 + .5rem);
                 }
                 @include m.mobile {
-                    font-size: $fs-2;
+                    font-size: calc($fs-2 + .4rem);
                 }
             }
 

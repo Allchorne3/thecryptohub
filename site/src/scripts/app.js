@@ -3,6 +3,7 @@ import HackedText from "./hacker-text.js"
 import Modal from './modal';
 import setupSwiper from './swiper';
 import Animations from './animations';
+import Tabs from './tabs';
 import InlineSVG from "./utils/js-inlinesvg"
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		HackedText.hackerText()
 		Modal.setupModal()
 		Animations.setupAnimations()
+		Tabs.setupTabs()
 
 		setupSwiper('.mvp-swiper', { 
 			slidesPerView: 1,
