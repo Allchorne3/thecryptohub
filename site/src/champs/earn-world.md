@@ -3,7 +3,7 @@ order: 2
 title: Earn World
 launchDate: 2024-04-03
 platformType: Long-Term Investment Platform
-referralLink: google.com
+referralLink: https://web.earn.world/auth/signup/5838497534/
 proof: true
 tags: champ
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."

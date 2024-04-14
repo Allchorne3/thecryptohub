@@ -9,12 +9,9 @@
     }
 
     h2.title {
-        font-weight: $fw-900;
+        font-weight: $fw-700;
         font-size: $fs-0;
     }
-
-    // display: flex;
-    // gap: 2rem;
 
     .card {
         border-radius: $br-medium;
@@ -27,5 +24,9 @@
                 margin-bottom: 1rem;
             }
         }
+    }
+
+    & + .is-divider {
+        transform: rotate(180deg) translateY(-6.5px);
     }
 }

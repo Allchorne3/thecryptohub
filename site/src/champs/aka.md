@@ -3,7 +3,7 @@ order: 3
 title: AKA
 launchDate: 2024-02-23
 platformType: Long-Term Investment Opportunity
-referralLink: google.com
+referralLink: https://member.aka07.com/signup?p=dQrZHs5o
 description: "AKA offers a long-term investment option with various plans."
 avoidDescription: This is just an example of an avoid description
 teamRewards: "No rewards can currently be found"

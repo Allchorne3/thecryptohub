@@ -21,7 +21,7 @@
   &-good {
     background-image:
       radial-gradient(farthest-side at bottom left,rgba(#485C5B, 0.5), transparent),
-      radial-gradient(farthest-corner at top right,rgba(#7671F0, .5), transparent 1000px),
+      radial-gradient(farthest-corner at top right,rgba($blue, .5), transparent 1000px),
       radial-gradient(circle, #34414E, #1B232A); 
   }
   &-bad {

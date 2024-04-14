@@ -70,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					slidesPerView: 2,
 				},
 				899: {
+					slidesPerView: 3,
+				},
+				1049: {
 					slidesPerView: countSwiperSlides('.trust-swiper'),
 				}
 			},

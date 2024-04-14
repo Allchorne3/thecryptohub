@@ -3,31 +3,60 @@
 
 #section-compare {
     background: $antique-white;
+    
+    h2.title {
+        color: $black;
+    }
 
     .tabs {
+        margin-top: 6rem;
         margin-bottom: 3rem;
+
+        @include m.tablet {
+        }
+        display: flex;
+        justify-content: center;
 
         ul {
             display: flex;
             gap: 1rem;
 
-            a {
-                background: $black;
-                color: $white;
-                border-radius: 30px;
-                padding: 1rem 2rem;
-                font-size: $fs-4;
-                font-weight: $fw-600;
-                border: solid 3px $black;
-                transition: 
-                    background .2s ease-in-out,
-                    color .4.5s ease-in-out;
-                    
-                &.is-selected {
-                    background: $white;
-                    color: $black;
-                }
+            @include m.tablet {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
             }
+            
+            li {
+                @include m.tablet {
+                    text-align: center;
+                }
+
+                a {
+                    background: $black;
+                    color: $white;
+                    border-radius: 40px;
+                    padding: 1rem 2rem;
+                    font-size: $fs-4;
+                    font-weight: $fw-600;
+                    border: solid 3px $black;
+                    transition:
+                    background .2s ease-in-out,
+                    color .45s ease-in-out;
+                    
+                    &.is-selected {
+                        background: $white;
+                        color: $black !important;
+                    }
+                    
+                    @include m.tablet {
+                        // background: red;
+                        display: block;
+                        width: 100%;
+                        padding: .75rem 1rem;
+                    }
+                }
+            } 
         }
     }
 
@@ -46,7 +75,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
 
-            @include m.mobile {
+            @include m.tablet {
                 grid-template-areas: 
                 "title"
                 "keyFeatures"
@@ -61,7 +90,7 @@
                 "vipTiers keyFeatures"
                 "smallInfo links";
                 
-                @include m.mobile {
+                @include m.tablet {
                     grid-template-areas: 
                     "title"
                     "keyFeatures"
