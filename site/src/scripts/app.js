@@ -15,15 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			addIsScrolledToHTML(25)
 		})
 
-		const form = document.querySelector('form')
-		
-		form?.addEventListener('submit', event => {
-			event.preventDefault()
-			const input = event.target.querySelector('input[name="name"]')
-			const value = input.value.trim()
-			console.log(DOMPurify.sanitize(value))
-		})
-
 		// Mobile nav
 		const hamburger = document.querySelector('.navbar-burger')
 		const menuItem = document.querySelectorAll('#nav li')

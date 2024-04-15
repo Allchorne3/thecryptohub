@@ -278,11 +278,11 @@ title: The Crypto Hub
         <div class="two-col">
             <div class="contact-form">
                 <h4><i class="fa-solid fa-envelope"></i> Send us a message</h4>
-                <form name="contact" method="POST" netlify data-netlify="true" data-netlify-honeypot="bot-field" action="/success/" id="contact-form">
+                <form name="contact" netlify id="contact-form">
                     <input class="hidden" name="bot-field">
                     
-                    <input type="text" placeholder="Name*" name="name" required />
-                    <input type="email" placeholder="Email address*" name="email" required />
+                    <input type="text" name="name" placeholder="Name*"  required />
+                    <input type="email" name="email" placeholder="Email address*" required />
                     <textarea cols="30" rows="5" placeholder="Message*" name="message" required></textarea>
 
                     <div class="buttons">
