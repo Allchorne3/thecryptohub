@@ -4,7 +4,18 @@
 .hero {
     height: 100vh;
     
+    @include m.tablet {
+        height: 80vh;
+        // height: fit-content;
+        padding: 1rem;
+    }
+    
     &-body {
+
+        @include m.tablet {
+            border-radius: 2.5rem;
+        }
+
         background: 
             radial-gradient(farthest-side at bottom left,rgba(#485C5B, 0.5), transparent),
             radial-gradient(farthest-corner at top right,rgba(#7671F0, .5), transparent 1000px),
@@ -19,17 +30,22 @@
             max-width: 1080px;
             color: $white;
 
-            h1, p, svg {
+            h1, p, img {
                 opacity: 0;
                 transform: translateY(20px)
             }
             
-            svg {
+            figure.image {
+                display: grid;
+                place-items: center;
                 margin-bottom: 1rem;
-                max-width: 500px !important;
-                
-                @include m.desktop {
-                    max-width: 300px !important;
+
+                img {
+                    max-width: 500px !important;
+                    
+                    @include m.desktop {
+                        max-width: 300px !important;
+                    }
                 }
             }
 

@@ -24,19 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
 			console.log(DOMPurify.sanitize(value))
 		})
 
+		// Mobile nav
+		const hamburger = document.querySelector('.navbar-burger')
+		const menuItem = document.querySelectorAll('#nav li')
+
+		hamburger.addEventListener('click', e => {
+			document.documentElement.classList.toggle('has-menu-active');
+		})
+
+		menuItem.forEach(item => {
+			item.addEventListener('click', () => {
+				document.documentElement.classList.remove('has-menu-active');
+			})
+		})
+
 		// Run functions
 		Dividers.setupDividerAnimations()
 		HackedText.hackerText()
 		Modal.setupModal()
 		Animations.setupAnimations()
 		Tabs.setupTabs()
-
-		function countSwiperSlides(container) {
-			return document.querySelectorAll(`${container} .swiper-slide`).length;
-		}
-		console.log(countSwiperSlides('.mvp-swiper'))
 		
-
 		setupSwiper('.mvp-swiper', { 
 			slidesPerView: 1,
 			breakpoints: {
@@ -85,3 +93,6 @@ const addIsScrolledToHTML = (scrolled = 0) => {
 	scrollTop > scrolled ? document.documentElement.classList.add('is-scrolled') : document.documentElement.classList.remove('is-scrolled')
 }
 
+function countSwiperSlides(container) {
+	return document.querySelectorAll(`${container} .swiper-slide`).length;
+}

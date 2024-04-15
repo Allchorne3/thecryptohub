@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as m;
 
 /* //////////////////////
     General styling
@@ -10,6 +11,10 @@ html {
 
 body {
     background: $white;
+
+    @include m.tablet {
+        padding-top: 5.8rem;
+    }
 }
 
 figure.image {

@@ -9,8 +9,8 @@ $screen-sizes: (
 
 // Hide on screen sizes
 @each $size, $px in $screen-sizes {
-    .hide-#{$size}-only {
-        @media (max-width: $px) {
+    .show-#{$size}-only {
+        @media (min-width: $px) {
             display: none !important;
         }
     }
@@ -22,9 +22,19 @@ $screen-sizes: (
         @content;
     }
 }
+@mixin mobile-min {
+    @media screen and (min-width: $mobile) {
+        @content;
+    }
+}
 
 @mixin tablet {
     @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin tablet-min {
+    @media screen and (min-width: $tablet) {
         @content;
     }
 }

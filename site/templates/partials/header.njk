@@ -1,9 +1,18 @@
 <header id="header">
-    <a href="/" class="logo">
+    <div class="logo">
         <figure class="image">
-            <img src="/assets/images/logo/tch-logo.svg" class="svg" alt="The Crypto Hub">
+            <a href="/">
+                <img src="/assets/images/logo/tch-logo.svg" class="svg" alt="The Crypto Hub">
+            </a>
+            <div class="navbar-burger show-tablet-only">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </figure>
-    </a>
+    </div>
 
     <nav id="nav">
         <ul role="list">
@@ -13,5 +22,13 @@
             <li><a href="#trust">Trust</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div id="nav-resources" class="show-tablet-only">
+            <h5>Referral Link</h5>
+            <ul role="list">
+                {% for referral in collections.champs %}
+                <li><a href="{{ referral.data.referralLink }}" target="_blank" rel="noopener">{{ referral.data.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </nav>
 </header>

@@ -6,13 +6,13 @@ const setupAnimations = () => {
     const heroBody = document.querySelector('.hero-body')
 
     
-    gsap.to(document.querySelector('.hero'), { padding: '2.5rem', duration: 1.25, ease: "power1.out" })
-    if(window.matchMedia("(max-width: 649px)").matches) {
-        gsap.to(document.querySelector('.hero'), { padding: '1rem', duration: 1.25, ease: "power1.out" })
-    }
     
-    gsap.to(document.querySelector('.hero-body'), { borderRadius: '2.5rem', duration: 1.25, ease: "power1.out"})
-    gsap.to(document.querySelector('.hero-body .svg'), { opacity: '1', y: 0, duration: .6, ease: "power1.out", delay: .8})
+    if(window.matchMedia("(min-width: 768px)").matches) {
+        gsap.to(document.querySelector('.hero'), { padding: '2.5rem', duration: 1.25, ease: "power1.out" })
+        gsap.to(document.querySelector('.hero-body'), { borderRadius: '2.5rem', duration: 1.25, ease: "power1.out"})
+    }
+
+    gsap.to(document.querySelector('.hero-body img'), { opacity: '1', y: 0, duration: .6, ease: "power1.out", delay: .8})
     gsap.to(document.querySelector('.hero-body h1'), { opacity: '1', y: 0, duration: .6, ease: "power1.out", delay: .95})
     gsap.to(document.querySelector('.hero-body p'), { opacity: '1', y: 0, duration: .6, ease: "power1.out", delay: 1.1})
         
