@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		setupSwiper('.trust-swiper', { 
 			slidesPerView: 1,
-			loop: true,
 			breakpoints: {
 				699: {
 					slidesPerView: 2,
