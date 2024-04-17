@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			slidesPerView: 1,
 			breakpoints: {
 				699: {
-					slidesPerView: 2,
+					slidesPerView: countSwiperSlides('.trust-swiper') < 2 ? 1 : 2,
 				},
 				899: {
-					slidesPerView: 3,
+					slidesPerView: countSwiperSlides('.trust-swiper') < 3 ? countSwiperSlides('.trust-swiper') : 3,
 				},
 				1049: {
-					slidesPerView: countSwiperSlides('.trust-swiper'),
+					slidesPerView: countSwiperSlides('.trust-swiper') > 1 ? 1 : countSwiperSlides('.trust-swiper'),
 				}
 			},
 		})
