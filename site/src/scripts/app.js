@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					slidesPerView: 3,
 				},
 				1249: {
-					slidesPerView: countSwiperSlides('.mvp-swiper'),
+					slidesPerView: countSwiperSlides('.mvp-swiper') > 4 ? 4 : countSwiperSlides('.mvp-swiper'),
 				}
 			},
 		})

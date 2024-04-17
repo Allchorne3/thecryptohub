@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: YIPTG
 launchDate: 2024-02-18
 platformType: Long-Term Investment Platform

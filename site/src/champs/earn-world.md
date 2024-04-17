@@ -7,7 +7,7 @@ referralLink: https://web.earn.world/auth/signup/5838497534/
 proof: true
 tags: champ
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
-description: Earn World offers a platform a professional automated trading service on INFRA software
+description: "Earn World offers a platform a professional automated trading service on INFRA software."
 
 vipTiers:
  - 
