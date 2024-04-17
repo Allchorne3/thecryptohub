@@ -3,6 +3,7 @@
 $screen-sizes: (
     mobile: 649px,
     tablet: 768px,
+    tableth: 899px,
     desktop: 1024px,
     large-desktop: 1249px
 );
@@ -35,6 +36,17 @@ $screen-sizes: (
 }
 @mixin tablet-min {
     @media screen and (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin tableth {
+    @media screen and (max-width: $tableth) {
+        @content;
+    }
+}
+@mixin tableth-min {
+    @media screen and (min-width: $tableth) {
         @content;
     }
 }

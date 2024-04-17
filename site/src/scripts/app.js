@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.addEventListener('scroll', () => {
 			addIsScrolledToHTML(25)
 		})
+		addIsScrolledToHTML(25)
 
 		// Mobile nav
 		const hamburger = document.querySelector('.navbar-burger')
