@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					slidesPerView: countSwiperSlides('.trust-swiper') < 3 ? countSwiperSlides('.trust-swiper') : 3,
 				},
 				1049: {
-					slidesPerView: countSwiperSlides('.trust-swiper') > 1 ? 1 : countSwiperSlides('.trust-swiper'),
+					slidesPerView: countSwiperSlides('.trust-swiper') > 1 ? countSwiperSlides('.trust-swiper') : 1,
 				}
 			},
 		})
