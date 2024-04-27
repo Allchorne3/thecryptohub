@@ -13,14 +13,16 @@ vipDescription: "YIPTG offers a tiered VIP system with increasing benefits based
 vipTiers:
  - 
     tier: 1
-    balance: $30 - $500    
+    balance: $30 - $100    
  - 
     tier: 2
-    balance: $500 - $3,000
+    balance: $100 - $500
  - 
     tier: 3
-    balance: $3,000 - $10,000
-    note: "Soon To Be Opened"
+    balance: $500 - $3,000
+ - 
+    tier: 4
+    balance: $3000 - $10,000
 
 keyFeatures:
  - 
