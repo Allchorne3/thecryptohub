@@ -36,6 +36,12 @@
         @include m.tableth {
             background-size: 115%;
         }
+
+        @include m.mobile {
+            background-size: 200% !important;
+            background-position: -100px center;
+            opacity: .3;
+        }
     }
     
     &-body {
