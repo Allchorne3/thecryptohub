@@ -6,9 +6,9 @@ platformType: Long-Term Investment Platform
 referralLink: https://h5.yiptg.com/user/reg?inviteCode=6M2BVG
 tags: champ
 proof: true
+currentBest: true
 description: "YIPTG offers a platform designed for long-term investment opportunities."
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
-vipDescription: "YIPTG offers a tiered VIP system with increasing benefits based on your investment amount. These tiers include:"
 
 vipTiers:
  - 
@@ -44,17 +44,16 @@ keyFeatures:
     header: Withdrawal Fee
     feature: A 5% fee applies to all withdrawals.
 
-socials:
+links:
  - 
     brand: Telegram
-    title: UK Telegram
     link: https://t.me/yiptguk
     shortLink: yiptguk
  - 
     brand: Telegram
-    title: Official Telegram
     link: https://t.me/yiptg
     shortLink: yiptg
-
-website: https://yiptg.com/
+ - 
+    website: true
+    link: https://yiptg.com/
 ---

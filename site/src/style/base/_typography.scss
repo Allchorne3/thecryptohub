@@ -10,10 +10,6 @@ body {
         line-height: 1;
         margin-bottom: 1rem;
 
-        &.title {
-            text-transform: uppercase;
-        }
-
         span {
             color: $blue-light;
         }
@@ -34,7 +30,15 @@ body {
     }
     
     h2 {
-        font-size: $fs-2;
+        margin-bottom: 6rem;
+        
+        &.title {
+            font-size: calc($fs-1 + 10px);
+
+            @include m.mobile {
+                font-size: $fs-1;
+            }
+        }
     }   
     
     h3 {

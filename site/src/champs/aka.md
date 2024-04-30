@@ -9,6 +9,7 @@ avoidDescription: This is just an example of an avoid description
 teamRewards: "No rewards can currently be found"
 tags: champ
 
+
 keyFeatures:
  - 
     header: Capital unlocked
@@ -30,12 +31,12 @@ keyFeatures:
     feature: Withdraw your earnings when they reach $2.
 
 
-socials:
+links:
  - 
     brand: Telegram
-    title: Telegram group
     link: https://t.me/AKAofficial07
     shortLink: AKAofficial07
-
-website: https://aka07.com/
+ - 
+    website: true
+    link: https://aka07.com/
 ---

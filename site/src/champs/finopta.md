@@ -5,10 +5,8 @@ launchDate: 2023-01-10
 platformType: Investment Plans with Daily Returns
 referralLink: https://finopta.top/user/reg2/?inviteCode=PRNDE2
 tags: champ
-
 description: "Finopta offers investment plans with daily returns."
 teamRewards: "The platform incentivizes user acquisition through team commissions and referral rewards. Details available on the official website."
-vipDescription: "Finopta offers a tiered VIP system with increasing benefits based on your investment amount. These tiers include:"
 
 vipTiers:
  - 
@@ -44,12 +42,12 @@ keyFeatures:
     header: Daily Activity
     feature: Requires daily interaction (clicking) for profit.
 
-socials:
+links:
  - 
     brand: Telegram
-    title: Telegram group
     link: https://t.me/FinOpta
     shortLink: FinOpta
-
-website: https://finopta.xyz/
+ - 
+    website: true
+    link: https://finopta.xyz/
 ---

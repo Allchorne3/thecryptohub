@@ -21,6 +21,89 @@ title: The Crypto Hub
     </div>
 </section>
 
+<section class="section is-medium" id="section-best">
+    <div class="container is-max-widescreen">
+        <h2 class="title is-text-centered">Current <span>best</span> platform</h2>
+
+        {% for best in collections.currentBest %}
+        {% set best = best.data %}
+        
+        <div class="tiles{% if best.vipTiers %} has-tiers{% endif %}">
+            <div class="tile-title glared">
+                <div>
+                    <h3>{{ best.title }}</h3>
+                    <p>{{ best.description }}</p>
+                </div>
+            </div>
+
+            {% if best.vipTiers %}
+            <div class="tile-vip-tiers glared">
+                <h3>VIP</h3>
+
+                <ul role="list">
+                    {% for vipTier in best.vipTiers %}
+                    <li>
+                        <p><span>Tier {{ vipTier.tier }}:</span> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="tile-info-small glared">
+                <h3>Team Commissions and Referral Rewards:</h3>
+                <p>{{ best.teamRewards }}</p>
+            </div>
+
+            <div class="tile-key-features glared">
+                <h3>Key Features</h3>
+
+                <div class="key-features">
+                    <ul role="list">
+                        {% for keyFeature in best.keyFeatures %}
+                        <li>
+                            <h5>{{ keyFeature.header }}</h5>
+                            <p>{{ keyFeature.feature }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <da href="{{ best.referralLink }}" target="_blank" rel="noopener" class="tile-register glared">Click here to sign up now</da>
+
+            <div class="tile-links glared">
+                <h3>Resources</h3>
+
+                <ul role="list">
+                    {% for link in best.links %}
+                    <li>
+                        <a href="{{ link.link }}" target="_blank" rel="noopener" class="link-link">
+                            {% if link.brand %}
+                            <i class="fa-brands fa-{{ link.brand | kebab}}"></i>
+                            {% elif link.website %}
+                            <i class="fa-solid fa-globe"></i>
+                            {% elif link.resource %}
+                            <i class="fa-solid fa-file-lines"></i>
+                            {% endif %}
+
+                            {% if link.shortLink %}
+                            <p>/{{ link.shortLink }}</p>
+                            {% elif link.resource %}
+                            <p>{{ link.title }}</p>
+                            {% else %}
+                            <p>{{ link.link }}</p>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
 <a id="champs" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-mvp">
     <div class="container is-max-widescreen">
@@ -104,134 +187,6 @@ title: The Crypto Hub
         transform="translate(-4276 -2726.413)" fill="#fcf9f5"/>
     </svg>
 </div>
-
-<a id="compare" class="is-page-anchor"></a>
-<section class="section is-medium" id="section-compare">
-    <div class="container is-max-htablet">
-        <div class="section-header">
-            <p class="pre-title">Compare</p>
-            <h2 class="title">Tell me about these platforms?</h2>
-        </div>
-
-        <div class="tabby">
-            <div class="tabs">
-                <ul role="list">
-                    {% for tab in collections.champs %}
-                        <li>
-                            <a href="#{{ tab.data.title | kebab }}" data-target="{{ tab.data.title | kebab }}"{% if tab.data.order === 1 %} class="is-selected"{% endif %}>{{ tab.data.title }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="tab-contents">
-                {% for comparison in collections.champs %}
-                <div class="tab-content{% if comparison.data.order === 1 %} is-selected{% endif %}" id="{{ comparison.data.title | kebab }}">
-                    <div class="tiles{% if comparison.data.vipTiers %} has-tiers{% endif %}">
-                        <div class="tile-title">
-                            <header>
-                                <figure class="image">
-                                    <img src="./assets/images/logos/{{ comparison.data.title | kebab }}.png" alt="{{ comparison.data.title }}">
-                                </figure>
-                                <h3>{{ comparison.data.title }}</h3>
-                            </header>
-                            
-                            <h4>{{ comparison.data.description }}</h4>
-
-                            <div class="buttons">
-                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                            </div>
-                        </div>
-
-                        {% if comparison.data.vipTiers %}
-                        <div class="tile-vip-tiers">
-                            <h4>VIP Tiers</h4>
-                            <p>{{ comparison.data.vipDescription }}</p>
-
-                            <ol role="list">
-                                {% for vipTier in comparison.data.vipTiers %}
-                                <li>
-                                    <p>
-                                        <strong>VIP Tier {{ vipTier.tier }}:</strong> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
-                                </li>
-                                {% endfor %}
-                            </ol>
-                            
-                            <div class="buttons mobile-only">
-                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        <div class="tile-info-small">
-                            <h4>Team Commissions and Referral Rewards:</h4>
-                            <p>{{ comparison.data.teamRewards }}</p>
-                            
-                            <div class="buttons mobile-only">
-                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                            </div>
-                        </div>
-
-                        <div class="tile-key-features">
-                            <h4>Key Features</h4>
-
-                            <div class="key-features">
-                                <ol role="list">
-                                    {% for keyFeature in comparison.data.keyFeatures %}
-                                    <li>
-                                        <h5>{{ keyFeature.header }}</h5>
-                                        <p>{{ keyFeature.feature }}</p>
-                                    </li>
-                                    {% endfor %}
-                                </ol>
-
-                                <div class="buttons mobile-only">
-                                    <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tile-links">
-                            <ul role="list">
-                                {% for social in comparison.data.socials %}
-                                <li>
-                                    <h5>{{ social.title }}</h5>
-                                    <a href="{{ social.link }}" target="_blank" rel="noopener" class="social-link">
-                                        <i class="fa-brands fa-{{ social.brand | kebab}}"></i>
-                                        <p>/{{ social.shortLink }}</p>
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-
-                            {% if comparison.data.website %}
-                            <h4>Official Website</h4>
-                            <a href="{{ comparison.data.website }}">{{ comparison.data.website }}</a>
-                            {% endif %}
-
-                            {% if comparison.data.resources %}
-                            <h4>Resources</h4>
-                            <ul role="list">
-                                {% for resource in comparison.data.resources %}
-                                <li>
-                                    {# <h5>{{ resource.icon }}</h5> #}
-                                    <a href="{{ resource.link }}" target="_blank" rel="noopener" class="resource-link">
-                                        <i class="{{ resource.icon }}"></i>
-                                        {{ resource.name }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
 
 <div class="is-divider">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920.878 114.895" class="divider">

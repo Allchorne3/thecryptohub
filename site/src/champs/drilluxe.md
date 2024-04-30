@@ -9,6 +9,7 @@ avoidDescription: ""
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 tags: champ
 
+
 keyFeatures:
  - 
     header: Different Types
@@ -21,12 +22,12 @@ keyFeatures:
     feature: 5% for each new deposit of second level referrals.
 
 
-socials:
+links:
  - 
     brand: Telegram
-    title: Telegram group
     link: https://t.me/+DgGebaW_NidmZWQy
     shortLink: +DgGebaW_NidmZWQy
-
-website: https://drilluxe.cc/
+ - 
+    website: true
+    link: https://drilluxe.cc/
 ---
