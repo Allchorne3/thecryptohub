@@ -11,10 +11,6 @@ html {
 
 body {
     background: $white;
-
-    @include m.tablet {
-        padding-top: 5.8rem;
-    }
 }
 
 figure.image {
@@ -26,15 +22,6 @@ figure.image {
 .is-divider {
     width: 100%;
     transform: translateY(-6.5px);
-}
-
-.logo {
-    figure.image {
-        svg {
-            max-width: 300px;
-            display: block;
-        }
-    }  
 }
 
 ol {

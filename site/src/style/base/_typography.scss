@@ -4,7 +4,7 @@
 /* typgraphy */
 body {
     font-family: $ff-main;
-    color: $black;
+    color: $white;
 
     h1, h2, h3, h4, h5, h6 {
         line-height: 1;
@@ -13,11 +13,24 @@ body {
         &.title {
             text-transform: uppercase;
         }
+
+        span {
+            color: $blue-light;
+        }
     }
 
     h1 {
         font-size: $fs-0;
         line-height: 1.2;
+        letter-spacing: 2px;
+
+        @include m.tableth {
+            font-size: 3rem;
+        }
+
+        @include m.mobile {
+            font-size: $fs-1;
+        }
     }
     
     h2 {
@@ -41,6 +54,8 @@ body {
     }
 
     p {
+        font-family: $ff-body;
+        
         &.subtitle {
             font-family: $ff-accent;
             font-size: $fs-5;

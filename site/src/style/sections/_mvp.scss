@@ -1,6 +1,8 @@
 @use '../abstracts/variables' as *;
 
-#section-mvp {    
+#section-mvp {
+    background: $navy-dark;
+    
     p.pre-title {
         color: $blue;
 

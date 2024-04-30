@@ -7,15 +7,21 @@
 	height: 20px;
 	cursor: pointer;
 	position: relative;
+	z-index: 90;
 
 	span {
 		display: block;
 		position: absolute;
 		height: 3px;
 		width: 100%;
-		background: #333;
+		background: $white;
 		border-radius: 3px;
-		transition: transform 0.3s ease;
+		transition: transform 0.3s ease,
+					background .05s ease;
+
+		html.has-menu-active & {
+			background: $navy-dark;
+		}
 
 		&:first-child {
 			top: 0;
