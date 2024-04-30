@@ -100,10 +100,10 @@
 				li {
 					font-size: $fs-5;
 					position: relative;
-					left: 50px;
-					opacity: 0;
 					
 					@include m.tablet {
+						left: 50px;
+						opacity: 0;
 						font-size: $fs-2;
 						
 						html.has-menu-active & {
