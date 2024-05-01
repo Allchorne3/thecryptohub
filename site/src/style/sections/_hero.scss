@@ -80,15 +80,42 @@
                 line-height: 1.8;
                 font-size: $fs-5;
                 font-weight: $fw-300;
+                opacity: 0;
+                transform: translateY(15px);
+                animation: fadeup .5s ease-in-out forwards;
+                animation-delay: .2s;
 
                 @include m.tableth {
                     font-size: $fs-6;
                     line-height: 1.8;
                 }
+
+                
+                @keyframes fadeup {
+                    to {
+                        opacity: 1;
+                        transform: translate(0);
+                    }
+                }
             }
             
             .buttons {
                 margin-top: 2rem;
+                opacity: 0;
+                transform: translateY(15px);
+                animation: fadeup .5s ease-in-out forwards;
+                animation-delay: .4s;
+
+                @keyframes fadeup {
+                    to {
+                        opacity: 1;
+                        transform: translate(0);
+                    }
+                }
+
+                a {
+                    font-size: $fs-4;
+                }
             }
         }
     }

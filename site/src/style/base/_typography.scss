@@ -112,4 +112,13 @@ body {
             }
         }
     }
+    
+    h1 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+        .line {
+            opacity: 0;
+            transform: translateY(90px);
+        }
+    }
 }

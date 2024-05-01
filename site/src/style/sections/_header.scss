@@ -14,6 +14,15 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 2rem 4rem;
+	opacity: 0;
+	animation: fade 1s ease-in-out forwards;
+	animation-delay: .2s;
+
+	@keyframes fade {
+		to {
+			opacity: 1;
+		}
+	}
 
 	@include m.mobile {
 		padding: 2rem;
@@ -73,10 +82,16 @@
 				padding-bottom: .25rem;
 				border-bottom: solid 1px $navy-dark;
 				margin-bottom: .5rem;
+				font-size: $fs-3;
+				font-weight: bold;
 			}
 
 			ul {
 				margin-bottom: 2rem;
+
+				a {
+					font-size: $fs-3;
+				}
 			}
 		}
 
@@ -132,9 +147,3 @@
 		}
 	}
 }
-
-// @keyframes fade {
-// 	to {
-// 		opacity: 1;
-// 	}
-// }
