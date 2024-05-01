@@ -37,6 +37,7 @@ body {
 
             @include m.mobile {
                 font-size: $fs-1;
+                margin-bottom: 3rem;
             }
         }
     }   

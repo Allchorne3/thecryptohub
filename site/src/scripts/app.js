@@ -1,10 +1,7 @@
-import Dividers from "./dividers.js";
-import HackedText from "./hacker-text.js"
-import Modal from './modal';
-import setupSwiper from './swiper';
-import Animations from './animations';
-import Tabs from './tabs';
-import InlineSVG from "./utils/js-inlinesvg"
+import Modal from 'Scripts/modal';
+import Animations from 'Scripts/animations';
+import InlineSVG from "Utils/js-inlinesvg"
+import Accordion from 'Scripts/accordion'
 
 document.addEventListener('DOMContentLoaded', () => {
 	InlineSVG.init({
@@ -31,51 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 
 		// Run functions
-		Dividers.setupDividerAnimations()
-		HackedText.hackerText()
 		Modal.setupModal()
 		Animations.setupAnimations()
-		Tabs.setupTabs()
-		
-		setupSwiper('.mvp-swiper', { 
-			slidesPerView: 1,
-			breakpoints: {
-				699: {
-					slidesPerView: 2,
-				},
-				1049: {
-					slidesPerView: 3,
-				},
-				1249: {
-					slidesPerView: countSwiperSlides('.mvp-swiper') > 4 ? 4 : countSwiperSlides('.mvp-swiper'),
-				}
-			},
-		})
-		setupSwiper('.avoid-swiper', { 
-			slidesPerView: 1,
-			breakpoints: {
-				699: {
-					slidesPerView: 2,
-				},
-				1049: {
-					slidesPerView: 3,
-				}
-			},
-		})
-		setupSwiper('.trust-swiper', { 
-			slidesPerView: 1,
-			breakpoints: {
-				699: {
-					slidesPerView: countSwiperSlides('.trust-swiper') < 2 ? 1 : 2,
-				},
-				899: {
-					slidesPerView: countSwiperSlides('.trust-swiper') < 3 ? countSwiperSlides('.trust-swiper') : 3,
-				},
-				1049: {
-					slidesPerView: countSwiperSlides('.trust-swiper') > 1 ? countSwiperSlides('.trust-swiper') : 1,
-				}
-			},
-		})
+		Accordion.setupAccordion();
 
 		const handleMouseMove = e => {
 			const { currentTarget: target } = e;
@@ -98,8 +53,4 @@ document.addEventListener('DOMContentLoaded', () => {
 const addIsScrolledToHTML = (scrolled = 0) => {
 	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	scrollTop > scrolled ? document.documentElement.classList.add('is-scrolled') : document.documentElement.classList.remove('is-scrolled')
-}
-
-function countSwiperSlides(container) {
-	return document.querySelectorAll(`${container} .swiper-slide`).length;
 }

@@ -4,24 +4,23 @@ title: YIPTG
 launchDate: 2024-02-18
 platformType: Long-Term Investment Platform
 referralLink: https://h5.yiptg.com/user/reg?inviteCode=6M2BVG
-tags: champ
 proof: true
-currentBest: true
+tags: currentBest
 description: "YIPTG offers a platform designed for long-term investment opportunities."
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 
 vipTiers:
  - 
-    tier: 1
+    tier: Tier 1
     balance: $30 - $100    
  - 
-    tier: 2
+    tier: Tier 2
     balance: $100 - $500
  - 
-    tier: 3
+    tier: Tier 3
     balance: $500 - $3,000
  - 
-    tier: 4
+    tier: Tier 4
     balance: $3000 - $10,000
 
 keyFeatures:

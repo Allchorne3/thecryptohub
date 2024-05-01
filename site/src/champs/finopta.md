@@ -10,13 +10,13 @@ teamRewards: "The platform incentivizes user acquisition through team commission
 
 vipTiers:
  - 
-    tier: 1
+    tier: Tier 1
     balance: $35 - $300
  - 
-    tier: 2
+    tier: Tier 2
     balance: $300 - $2000
  - 
-    tier: 3
+    tier: Tier 3
     balance: $300 - $200
 
 keyFeatures:

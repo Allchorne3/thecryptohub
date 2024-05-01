@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
 
     // Current best collection
     eleventyConfig.addCollection("currentBest", collection => {
-        return collection.getFilteredByTag("champ").filter(item => item.data.currentBest);
+        return collection.getFilteredByTag("currentBest");
     });
     
     // Platforms to avoid

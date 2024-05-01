@@ -12,12 +12,12 @@
 @use 'sections/footer';
 @use 'sections/hero';
 @use 'sections/best';
-@use 'sections/mvp';
+@use 'sections/champs';
 @use 'sections/avoid';
-@use 'sections/compare';
 @use 'sections/trust';
 @use 'sections/contact';
 
 @use 'components/swiper';
 @use 'components/modal';
 @use 'components/hamburger';
+@use 'components/accordion';

@@ -43,7 +43,7 @@ title: The Crypto Hub
                 <ul role="list">
                     {% for vipTier in best.vipTiers %}
                     <li>
-                        <p><span>Tier {{ vipTier.tier }}:</span> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
+                        <p><span>{{ vipTier.tier }}:</span> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
                     </li>
                     {% endfor %}
                 </ul>
@@ -70,7 +70,7 @@ title: The Crypto Hub
                 </div>
             </div>
 
-            <da href="{{ best.referralLink }}" target="_blank" rel="noopener" class="tile-register glared">Click here to sign up now</da>
+            <a href="{{ best.referralLink }}" target="_blank" rel="noopener" class="tile-register glared">Click here to sign up now</a>
 
             <div class="tile-links glared">
                 <h3>Resources</h3>
@@ -104,101 +104,124 @@ title: The Crypto Hub
     </div>
 </section>
 
-<a id="champs" class="is-page-anchor"></a>
-<section class="section is-medium" id="section-mvp">
-    <div class="container is-max-widescreen">
-        <div class="section-header">
-            <p class="pre-title">Champs</p>
-            <h2 class="title">MVP April 2024</h2>
-        </div>
+<section class="section is-medium px-0" id="section-champs">
+    <h2 class="title is-text-centered">Best <span>platforms</span>April 2024</h2>
 
-        <div class="swiper mvp-swiper">
-            <div class="swiper-wrapper">
-                {% for champ in collections.champs %}
-                <div class="swiper-slide">
-                    <div class="mvp">
-                        <div class="card platform-good">
-                            <div class="card-information">
-                                <span>{{ champ.data.order }}</span>
-                                <h3 class="title">{{ champ.data.title }}</h3>
-                                <p><strong>Launched:</strong> {{ champ.data.launchDate | prettyDate('MMM DD, YYYY') }}</p>
-                                <p><strong>{{ champ.data.platformType}}</strong></p>
+    <div class="accordion-container">
+        {% for champ in collections.champs %}
+        {% set champ = champ.data %}
+        
+        <div class="accordion">
+            <div class="container is-max-widescreen accordion-inner">
 
-                                <div class="buttons">
-                                    <a href="{{ champ.data.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign Up now</a>
-                                    <a href="#section-compare" class="text-link">Click here to view more details</a>
-                                </div>
+                <div class="accordion-header">
+                    <h3 class="accordion-header_title">{{ champ.title}}</h3>
+
+                    <div class="accordion-indicator">
+                        <p class="indicator-plus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51">
+                                <g id="Group_45" data-name="Group 45" transform="translate(-580.5 -2740.5)">
+                                    <line id="Line_22" data-name="Line 22" y2="51" transform="translate(606 2740.5)" fill="none" stroke="#fff" stroke-width="1"/>
+                                    <line id="Line_23" data-name="Line 23" x1="51" transform="translate(580.5 2766)" fill="none" stroke="#fff" stroke-width="1"/>
+                                </g>
+                            </svg>
+                        </p>
+                        
+                        <p class="indicator-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="1" viewBox="0 0 51 1">
+                                <g id="Group_44" data-name="Group 44" transform="translate(-580.5 -2785)">
+                                    <line id="Line_23" data-name="Line 23" x1="51" transform="translate(580.5 2785.5)" fill="none" stroke="#fff" stroke-width="1"/>
+                                </g>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-content">
+                    <div class="accordion-content_inner{% if champ.teamRewards %} has-team-rewards{% endif %}">
+                        <div class="left">
+                            <p class="champ-description">{{ champ.description }}</p>
+
+                            <div class="buttons show-tablet-only">
+                                <a href="{{ champ.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign up now</a>
                             </div>
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="/assets/images/logos/{{ champ.data.title | kebab }}.png" alt="{{ champ.data.title }}">
-                                </figure>
+
+                            <div class="key-features">
+                                <h4>Key Features</h4>
+
+                                <ul role="list">
+                                    {% for feature in champ.keyFeatures %}
+                                        <li>
+                                            <h5>{{ feature.header }}</h5>
+                                            <p>{{ feature.feature }}</p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
+
+                            {% if champ.teamRewards %}
+                            <div class="team-rewards">
+                                <h4>Team rewards</h4>
+                                <p>{{ champ.teamRewards }}</p>
+                            </div>
+                            {% endif %}
+
+                            <div class="buttons hide-tablet-only">
+                                <a href="{{ champ.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign up now</a>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            {% if champ.vipTiers %}
+                                <h4>VIP</h4>
+
+                                <ul class="vip" role="list">
+                                    {% for info in champ.vipTiers %}
+                                        <li>
+                                            <p><span>{{ info.tier }}</span>: {{ info.balance }}</p>
+                                            {% if info.note %}
+                                            <p><em>{{ info.note }}</em></p>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            <h4>Resources</h4>
+                            <ul role="list">
+                                {% for link in champ.links %}
+                                <li>
+                                    <a href="{{ link.link }}" target="_blank" rel="noopener" class="link-link">
+                                        {% if link.brand %}
+                                        <i class="fa-brands fa-{{ link.brand | kebab}}"></i>
+                                        {% elif link.website %}
+                                        <i class="fa-solid fa-globe"></i>
+                                        {% elif link.resource %}
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        {% endif %}
+
+                                        {% if link.shortLink %}
+                                        <p>/{{ link.shortLink }}</p>
+                                        {% elif link.resource %}
+                                        <p>{{ link.title }}</p>
+                                        {% else %}
+                                        <p>{{ link.link }}</p>
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-
-            {% include "swiper-pagination.njk" %}
         </div>
+        {% endfor %}
     </div>
 </section>
 
-<a id="avoid" class="is-page-anchor"></a>
-<section class="section is-medium" id="section-avoid">
-    <div class="container is-max-htablet">
-        <div class="section-header">
-            <p class="pre-title">Avoid</p>
-            <h2 class="title special-text">Who should I avoid?</h2>
-        </div>
 
-        <div class="swiper avoid-swiper">
-            <div class="swiper-wrapper">
-                {% for avoid in collections.avoids %}
-                <div class="swiper-slide">
-                    <div class="card platform-bad">
-                        <div class="card-information">
-                            <h3 class="title">{{ avoid.data.title }}</h3>
-
-                            <p class="card-information_description">{{ avoid.data.avoidDescription }}</p>
-                        </div>
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="/assets/images/logos/{{ avoid.data.title | kebab}}.png" alt="{{ avoid.data.title }}">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-
-            {% include "swiper-pagination.njk" %}
-        </div>
-    </div>
-</section>
-
-<div class="is-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920.878 114.895" class="divider">
-        <path
-        element="path-to-animate"
-        d="M4276,2726.413H6196.878v114.895s-952.163-50.252-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z"
-        final-path="M4276,2726.413H6196.878v114.895s-959.106-153.2-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z" 
-        transform="translate(-4276 -2726.413)" fill="#fcf9f5"/>
-    </svg>
-</div>
-
-<div class="is-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920.878 114.895" class="divider">
-        <path
-        element="path-to-animate"
-        d="M4276,2726.413H6196.878v114.895s-952.163-50.252-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z"
-        final-path="M4276,2726.413H6196.878v114.895s-959.106-153.2-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z" 
-        transform="translate(-4276 -2726.413)" fill="#fcf9f5"/>
-    </svg>
-</div>
-
-<a id="trust" class="is-page-anchor"></a>
+{# <a id="trust" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-trust">
     <div class="container is-max-htablet">
         <div class="section-header">
@@ -269,6 +292,6 @@ title: The Crypto Hub
         </div>
 
     </div>
-</section>
+</section> #}
 
 {% include "terms-and-conditions.njk" %}
