@@ -6,7 +6,7 @@
         padding: 6.5rem 3.5rem;
 
         @include m.mobile {
-            padding: 2rem 1.5rem;
+            padding: 4rem 2rem;
         }
     }
 
@@ -46,5 +46,20 @@
         max-width: 800px;
         margin-inline: auto;
     }
+}
 
+.cols {
+    display: flex;
+    align-items: center;
+
+    @include m.tableth {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    & > .left, 
+    & > .right {
+        flex: 1;
+        padding: 3rem;
+    }
 }

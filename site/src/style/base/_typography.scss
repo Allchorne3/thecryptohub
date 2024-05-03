@@ -58,9 +58,11 @@ body {
         margin-top: .2rem;
     }
 
-    p {
+    p, ul {
         font-family: $ff-body;
-        
+    }
+
+    p {
         &.subtitle {
             font-family: $ff-accent;
             font-size: $fs-5;
