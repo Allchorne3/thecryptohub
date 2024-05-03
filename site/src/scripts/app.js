@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Run functions
 		Modal.setupModal()
 		Animations.setupAnimations()
-		Accordion.setupAccordion();
+		const accordionChamps = new Accordion('#section-champs');
+		const accordionAvoid = new Accordion('#section-avoid');
 
 		const handleMouseMove = e => {
 			const { currentTarget: target } = e;

@@ -1,32 +1,41 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as m;
 
 #section-avoid {
-    position: relative;
-    color: $white;
+    background: $navy-dark;
+    padding-inline: .5rem;
 
-    p.pre-title:before {
-        background: $white;
-    }
-
-    h2.title {
-        font-weight: $fw-700;
-        font-size: $fs-0;
-    }
-
-    .card {
-        border-radius: $br-medium;
-        padding: 2rem;
-        min-height: 416px;
-
-        figure.image {
-            img {
-                max-height: 180px;
-                margin-bottom: 1rem;
-            }
+    h2 {
+        span {
+            color: $red;
         }
     }
 
-    & + .is-divider {
-        transform: rotate(180deg) translateY(-6.5px);
+    .accordion {
+        border-bottom: none;
+        margin-bottom: .5rem;
+        
+        &-header {
+            background-image: $gradient;
+            
+            @include m.mobile {
+                padding: 1rem;
+            }
+            
+            &_title {
+                font-size: $fs-2;
+                margin-bottom: 0;
+                margin-left: 1rem;
+
+                @include m.mobile {
+                    font-size: $fs-3;
+                }
+            }
+        }
+
+
+        &:hover .accordion-header h3 {
+            left: unset;
+        }
     }
 }

@@ -57,9 +57,11 @@ $blue-light: #37BCF8;
 $purple: #7671F0;
 $navy: #18324D;
 $navy-dark: #0F172A;
+$gradient: linear-gradient(to right, #1E294F, #193550, #0F172A);
 
 // Borders
 $border: solid 1px $white;
+$border-light: solid 1px rgba($white, .2);
 
 // Border radius
 $br-medium: 33px;

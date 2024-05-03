@@ -1,36 +1,34 @@
-const setupAccordion = () => {
-    const accordionContainer = document.querySelector('.accordion-container')
-
-    if(!accordionContainer) {
-        console.warn(`No accordion has been found! on the ${window.location.href} page`)
-        return;
+class Accordion {
+    constructor(containerSelector) {
+        this.container = document.querySelector(containerSelector);
+        if (!this.container) {
+            console.warn(`No accordion container has been found on the ${window.location.href} page`);
+            return;
+        }
+        this.setupAccordion();
     }
 
-    // Function to calculate the height of the accordion when opened
-    function getContentHeight(accordion) {
-        const accordionInner = accordion.querySelector('.accordion-content_inner') 
-        if(accordion.classList.contains('is-open')) return 0
-        return accordionInner.getBoundingClientRect().height
+    getContentHeight(accordion) {
+        const accordionInner = accordion.querySelector('.accordion-content_inner');
+        if (accordion.classList.contains('is-open')) return 0;
+        return accordionInner.getBoundingClientRect().height;
     }
 
-    // Function to update the accordion. To open the accordion and apply the correct height
-    function updateAccordion(accordion, height) {
-        const accordionContent = accordion.querySelector('.accordion-content')
-        // Update the accordion to open/close
-        accordion.classList.toggle('is-open')
-        accordionContent.style.height = `${height}px`
+    updateAccordion(accordion, height) {
+        const accordionContent = accordion.querySelector('.accordion-content');
+        accordion.classList.toggle('is-open');
+        accordionContent.style.height = `${height}px`;
     }
 
-    accordionContainer.addEventListener('click', e => {
-        const accordionHeader = e.target.closest('.accordion-header')
-        if(!accordionHeader) return
-
-        const accordion = accordionHeader.parentElement.parentElement
-        const height = getContentHeight(accordion)
-        updateAccordion(accordion, height)
-    })
+    setupAccordion() {
+        this.container.addEventListener('click', (e) => {
+            const accordionHeader = e.target.closest('.accordion-header');
+            if (!accordionHeader) return;
+            const accordion = accordionHeader.parentElement.parentElement;
+            const height = this.getContentHeight(accordion);
+            this.updateAccordion(accordion, height);
+        });
+    }
 }
 
-export default {
-    setupAccordion
-}
+export default Accordion;

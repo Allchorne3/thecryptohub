@@ -22,7 +22,7 @@
     }
 
     .right {
-        background-image: linear-gradient(to right, #1E294F, #193550, #0F172A);
+        background-image: $gradient;
         display: flex;
         align-items: center;
         padding-block: 3rem;

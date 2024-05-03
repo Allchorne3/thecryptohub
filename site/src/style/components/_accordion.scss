@@ -2,7 +2,7 @@
 @use '../abstracts/mixins' as m;
 
 .accordion {
-    border-bottom: $border;
+    border-bottom: $border-light;
 
     &-header {
         display: flex;
@@ -17,6 +17,7 @@
             position: relative;
             left: 0;
             transition: left .75s cubic-bezier(0.19, 1, 0.22, 1);
+            margin-bottom: 0;
         }
         
         &_title {
@@ -46,12 +47,19 @@
         .indicator {
             width: .1rem;
 
+            &-plus, 
+            &-minus {
+                height: 51px;
+            }
+            
             &-plus {
                 display: none;
             }
-    
+            
             &-minus {
-                display: block;
+                height: 56px;
+                display: flex !important;
+                align-items: center !important;
             }
         }
     }
