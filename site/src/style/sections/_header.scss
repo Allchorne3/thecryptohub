@@ -7,16 +7,24 @@
 
 #header {
 	position: fixed;
-	top: 0;
+	top: -110px;
 	left: 0;
 	width: 100%;
 	z-index: 10;
 	display: flex;
 	justify-content: space-between;
-	padding: 2rem 4rem;
+	padding-inline: 4rem;
+	height: 100px;
 	opacity: 0;
 	animation: fade 1s ease-in-out forwards;
 	animation-delay: .2s;
+	display: flex;
+	align-items: center;
+	transition: top 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+	&.is-active {
+		top: 0;
+	}
 
 	@keyframes fade {
 		to {
@@ -32,23 +40,24 @@
 		content: "";
 		position: absolute;
 		left: 0;
-		top: -100%;
+		top: 0%;
 		width: 100%;
 		height: 100%;
-		background: rgba(255,255,255, 0);
-		backdrop-filter: blur(10px);
+		background: rgba($navy-dark, .97);
 		isolation: isolate;
 		z-index: -1;
+		pointer-events: none;
 		transition: top .3s cubic-bezier(0.19, 1, 0.22, 1);
-
-		html.is-scrolled & {
-			top: 0;
-		}
+		
+		// html.is-scrolled & {
+		// 	top: 0;
+		// }
 	}
 
 	h2 {
 		position: relative;
 		z-index: 90;
+		color: $blue-light;
 
 		html.has-menu-active & {
 			color: $navy-dark;
@@ -115,6 +124,14 @@
 				li {
 					font-size: $fs-5;
 					position: relative;
+
+					a {
+						transition: color .3s ease-in-out;
+
+						&:hover {
+							color: $blue-light;
+						}
+					}
 					
 					@include m.tablet {
 						left: 50px;

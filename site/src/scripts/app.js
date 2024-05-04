@@ -8,8 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		svgSelector: 'img.svg',
 		initClass: 'js-inlinesvg',
 	}, () => {
+		let lastScrollTop = 0;
+		const header = document.querySelector('#header');
+
 		document.addEventListener('scroll', () => {
 			addIsScrolledToHTML(25)
+
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+			if (currentScroll > lastScrollTop) {
+				// scrolling down
+				header.classList.remove('is-active')
+			} else {
+				// scrolling up
+				header.classList.add('is-active')
+			}
+			lastScrollTop = currentScroll;
 		})
 		addIsScrolledToHTML(25)
 
