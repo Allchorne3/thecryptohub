@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background: $white;
+    background: $navy-dark;
 }
 
 figure.image {
@@ -67,7 +67,6 @@ ol {
     display: flex;
     gap: .5rem;
     align-items: center;
-    color: $black;
     border-radius: 50px;
     transition: border .3s ease-in-out;
 
