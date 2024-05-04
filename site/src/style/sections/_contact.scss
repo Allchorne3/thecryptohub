@@ -2,8 +2,6 @@
 @use '../abstracts/mixins' as m;
 
 #section-contact {
-    // background: $navy-dark;
-    
     @include m.mobile {
         padding-top: 4rem;
     }
@@ -11,10 +9,6 @@
     .cols {
         padding: .5rem;
         background: rgba($white, .02);
-
-        // @include m.tablet {
-        //     flex-direction: row !important;
-        // }
 
         @include m.tableth {
             flex-direction: column-reverse !important;

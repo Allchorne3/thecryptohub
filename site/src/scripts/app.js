@@ -2,6 +2,7 @@ import Modal from 'Scripts/modal';
 import Animations from 'Scripts/animations';
 import InlineSVG from "Utils/js-inlinesvg"
 import Accordion from 'Scripts/accordion'
+import setupSwiper from './swiper';
 
 document.addEventListener('DOMContentLoaded', () => {
 	InlineSVG.init({
@@ -40,6 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 
+		// Swipers
+		setupSwiper('.trust-swiper', { 
+			slidesPerView: 1,
+			breakpoints: {
+				699: {
+					slidesPerView: countSwiperSlides('.trust-swiper') < 2 ? 1 : 2,
+				},
+				899: {
+					slidesPerView: countSwiperSlides('.trust-swiper') < 3 ? countSwiperSlides('.trust-swiper') : 3,
+				},
+				1049: {
+					slidesPerView: countSwiperSlides('.trust-swiper') > 1 ? countSwiperSlides('.trust-swiper') : 1,
+				}
+			},
+		})
+
 		// Run functions
 		Modal.setupModal()
 		Animations.setupAnimations()
@@ -67,4 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const addIsScrolledToHTML = (scrolled = 0) => {
 	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	scrollTop > scrolled ? document.documentElement.classList.add('is-scrolled') : document.documentElement.classList.remove('is-scrolled')
+}
+
+function countSwiperSlides(container) {
+	return document.querySelectorAll(`${container} .swiper-slide`).length;
 }

@@ -296,17 +296,14 @@ title: The Crypto Hub
     </div>
 </section>
 
-{# <a id="trust" class="is-page-anchor"></a>
+<a id="trust" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-trust">
-    <div class="container is-max-htablet">
-        <div class="section-header">
-            <p class="pre-title">Trust</p>
-            <h2 class="title">Proof of withdrawals</h2>
-        </div>
+    <div class="container">
+        <h2 class="title is-text-centered"><span>Proof</span> of withdrawals</h2>
 
         <div class="swiper trust-swiper">
             <div class="swiper-wrapper">
-                {% for proof in collections.champs %}
+                {% for proof in collections.all %}
                     {% if proof.data.proof %}
                     <div class="swiper-slide">
                         <figure class="image proof">
@@ -321,7 +318,7 @@ title: The Crypto Hub
             {% include "swiper-pagination.njk" %}
         </div>
     </div>
-</section> #}
+</section>
 
 <a id="contact" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-contact">
