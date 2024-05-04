@@ -27,11 +27,12 @@
         &:hover {
             cursor: pointer;
         }
+        
+        .accordion:not(.is-open) &:hover h3 {
+            left: 40px;
+        }
     }
 
-    &:hover .accordion-header h3 {
-        left: 40px;
-    }
     
     .indicator {
         &-plus {
