@@ -27,7 +27,15 @@ module.exports = function(eleventyConfig) {
     
     // Platforms to avoid
     eleventyConfig.addCollection("avoids", collection => {
-        return collection.getFilteredByTag("avoid")
+        return collection.getFilteredByTag("avoid").sort((a, b) => {
+            if ( a.data.avoidOrder < b.data.avoidOrder ){
+                return -1;
+            }
+            if ( a.data.avoidOrder > b.data.avoidOrder ){
+                return 1;
+            }
+            return 0;
+        });
     });
 
     // Shortcodes

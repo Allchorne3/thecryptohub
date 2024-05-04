@@ -1,13 +1,13 @@
 ---
-order: 1
 title: Drilluxe
+avoidOrder: 1
 launchDate: 2023-01-01
 platformType: Long-Term Crypto Mining
 referralLink: https://drilluxe.cc/?ref=Adam0115
 description: "With Drilluxe, the more power (Split Hash) you have, the more you can get."
-avoidDescription: ""
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
-tags: champ
+tags: avoid
+avoidDescription: Hash Stopped working and nothing was being earned. Stay clear.
 
 keyFeatures:
  - 
