@@ -22,19 +22,34 @@
         
         &_title {
             font-size: $fs-1;
+
+            @include m.mobile {
+                font-size: $fs-3;
+            }
         }
 
         &:hover {
             cursor: pointer;
         }
         
-        .accordion:not(.is-open) &:hover h3 {
-            left: 40px;
+        @include m.mobile-min {
+            .accordion:not(.is-open) &:hover h3 {
+                left: 40px;
+            }
         }
     }
 
     
     .indicator {
+        @include m.mobile {
+            &-plus, 
+            &-minus {
+                svg {
+                    max-width: 30px;
+                }
+            }
+        }
+
         &-plus {
             display: block;
         }
