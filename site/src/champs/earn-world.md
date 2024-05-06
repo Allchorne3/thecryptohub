@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 title: Earn World
 launchDate: 2024-04-03
 platformType: Long-Term Investment Platform
