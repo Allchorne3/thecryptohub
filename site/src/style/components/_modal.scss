@@ -39,7 +39,7 @@
         background: $antique-white;
         color: $black;
         padding: 2rem;
-        border-radius: $br-medium;
+        border-radius: $br-small;
 
         p:not(:last-child) {
             margin-bottom: 1rem;
@@ -76,11 +76,11 @@
     
     i {
         font-size: $fs-0;
-        color: $green;
+        color: $blue-light;
         transition: color .3s ease-in-out;
 
         &:hover {
-            color: darken($green, 10%);
+            color: darken($blue-light, 10%);
         }
     }
 }

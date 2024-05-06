@@ -39,13 +39,19 @@
 	.logo {
 		flex: 1;
 
-		figure.image {
-			margin-bottom: 1rem;
+		// figure.image {
+		// 	margin-bottom: 1rem;
 
-			svg {
-				width: 300px;
-				max-width: 100%;
-			}
+		// 	svg {
+		// 		width: 300px;
+		// 		max-width: 100%;
+		// 	}
+		// }
+
+		h2 {
+			font-size: $fs-1;
+			color: $blue-light;
+			margin-bottom: 2rem;
 		}
 
 	}

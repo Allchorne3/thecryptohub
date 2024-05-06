@@ -1,4 +1,5 @@
 ---
 title: Canaan
-avoidDescription: "Because I didn’t promote or build a team fast enough, this platform closed my account. I would NOT recommend signing up."
+avoidDescription: "I didn’t work quickly enough to grow my team or promote the platform, and as a result, they closed my account. I wouldn’t suggest signing up."
+avoidOrder: 2
 ---

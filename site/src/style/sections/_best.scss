@@ -44,7 +44,7 @@
 
         [class^="tile-"] {
             background: rgba($navy, 0.5); /* Assuming $navy is a variable containing a color value */
-            border-radius: $br-medium;     /* Assuming $br-medium is a variable containing border radius value */
+            border-radius: 6px;     /* Assuming $br-medium is a variable containing border radius value */
             padding: 2rem;
             position: relative;
 

@@ -47,11 +47,12 @@ ol {
             display: grid;
             place-items: center;
             left: -10px;
-            top: 9px;
+            top: 12px;
             transform: translate(-50%, -50%);
             width: 30px;
             height: 30px;
-            background: $olive;
+            background: $navy-dark;
+            color: $white;
             z-index: -1;
             border-radius: 50%;
         }
