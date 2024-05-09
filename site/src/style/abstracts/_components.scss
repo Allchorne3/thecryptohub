@@ -11,17 +11,16 @@
     }
 
     .button {
-        padding: 0.625rem 1.56rem;
+        padding: 0.8rem 4rem;
         border-radius: 40px;
         display: inline-block;
         color: $black;
-        font-size: $fs-7;
-        width: 100%;
+        font-size: $fs-6;
         text-align: center;
 
         
         &-primary {
-            background: $clr-primary;
+            background: $blue-light;
         }
         
         &-outline {

@@ -6,251 +6,304 @@ title: The Crypto Hub
 <section class="section hero">
     <div class="hero-body">
         <div class="content">
-            <div class="logo">
-                <figure class="image">
-                    <img src="./assets/images/logo/tch-logo.svg" alt="The Crypto Hub logo">
-                </figure>
+            <div class="text-wrapper">
+                <h1>Struggling to make sense</h1>
+                <h1>of <span>cryptocurrency</span></h1>
+                <h1>platforms?</h1>
             </div>
-            
-            <h1><strong class="special-text">Struggling</strong> to make <span data-text="hacked">sense</span> of cryptocurrency platforms?</h1>
+
             <p>Discover the top Crypto platforms! Access unbiased reviews to find the best options and steer clear of potential risks. Start your journey here at The Crypto Hub!</p>
+            
+            <div class="buttons">
+                <a href="#best" class="button button-primary">Get started</a>
+            </div>
         </div>
     </div>
 </section>
 
-<a id="champs" class="is-page-anchor"></a>
-<section class="section is-medium" id="section-mvp">
+<a id="best" class="is-page-anchor"></a>
+<section class="section is-medium" id="section-best">
     <div class="container is-max-widescreen">
-        <div class="section-header">
-            <p class="pre-title">Champs</p>
-            <h2 class="title">MVP April 2024</h2>
+        <h2 class="title is-text-centered">Current <span>best</span> platform</h2>
+
+        {% for best in collections.currentBest %}
+        {% set best = best.data %}
+        
+        <div class="tiles{% if best.vipTiers %} has-tiers{% endif %}">
+            <div class="tile-title glared">
+                <div>
+                    <h3>{{ best.title }}</h3>
+                    <p>{{ best.description }}</p>
+                </div>
+            </div>
+
+            {% if best.vipTiers %}
+            <div class="tile-vip-tiers glared">
+                <h3>VIP</h3>
+
+                <ul role="list">
+                    {% for vipTier in best.vipTiers %}
+                    <li>
+                        <p><span>{{ vipTier.tier }}:</span> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="tile-info-small glared">
+                <h3>Team Commissions and Referral Rewards:</h3>
+                <p>{{ best.teamRewards }}</p>
+            </div>
+
+            <div class="tile-key-features glared">
+                <h3>Key Features</h3>
+
+                <div class="key-features">
+                    <ul role="list">
+                        {% for keyFeature in best.keyFeatures %}
+                        <li>
+                            <h5>{{ keyFeature.header }}</h5>
+                            <p>{{ keyFeature.feature }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <a href="{{ best.referralLink }}" target="_blank" rel="noopener" class="tile-register glared">Click here to sign up now</a>
+
+            <div class="tile-links glared">
+                <h3>Resources</h3>
+
+                <ul role="list">
+                    {% for link in best.links %}
+                    <li>
+                        <a href="{{ link.link }}" target="_blank" rel="noopener" class="link-link">
+                            {% if link.brand %}
+                            <i class="fa-brands fa-{{ link.brand | kebab}}"></i>
+                            {% elif link.website %}
+                            <i class="fa-solid fa-globe"></i>
+                            {% elif link.resource %}
+                            <i class="fa-solid fa-file-lines"></i>
+                            {% endif %}
+
+                            {% if link.shortLink %}
+                            <p>/{{ link.shortLink }}</p>
+                            {% elif link.resource %}
+                            <p>{{ link.title }}</p>
+                            {% else %}
+                            <p>{{ link.link }}</p>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
+        {% endfor %}
+    </div>
+</section>
 
-        <div class="swiper mvp-swiper">
-            <div class="swiper-wrapper">
-                {% for champ in collections.champs %}
-                <div class="swiper-slide">
-                    <div class="mvp">
-                        <div class="card platform-good">
-                            <div class="card-information">
-                                <span>{{ champ.data.order }}</span>
-                                <h3 class="title">{{ champ.data.title }}</h3>
-                                <p><strong>Launched:</strong> {{ champ.data.launchDate | prettyDate('MMM DD, YYYY') }}</p>
-                                <p><strong>{{ champ.data.platformType}}</strong></p>
+<a id="champs" class="is-page-anchor"></a>
+<section class="section is-medium px-0" id="section-champs">
+    <h2 class="title is-text-centered">Platform <span>champs</span> April 2024</h2>
 
-                                <div class="buttons">
-                                    <a href="{{ champ.data.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign Up now</a>
-                                    <a href="#section-compare" class="text-link">Click here to view more details</a>
-                                </div>
+    <div class="accordion-container">
+        {% for champ in collections.champs %}
+        {% set champ = champ.data %}
+        
+        <div class="accordion">
+            <div class="container is-max-widescreen accordion-inner">
+
+                <div class="accordion-header">
+                    <h3 class="accordion-header_title">{{ champ.title}}</h3>
+
+                    <div class="accordion-indicator">
+                        <p class="indicator-plus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51">
+                                <g id="Group_45" data-name="Group 45" transform="translate(-580.5 -2740.5)">
+                                    <line id="Line_22" data-name="Line 22" y2="51" transform="translate(606 2740.5)" fill="none" stroke="#fff" stroke-width="1"/>
+                                    <line id="Line_23" data-name="Line 23" x1="51" transform="translate(580.5 2766)" fill="none" stroke="#fff" stroke-width="1"/>
+                                </g>
+                            </svg>
+                        </p>
+                        
+                        <p class="indicator-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="1" viewBox="0 0 51 1">
+                                <g id="Group_44" data-name="Group 44" transform="translate(-580.5 -2785)">
+                                    <line id="Line_23" data-name="Line 23" x1="51" transform="translate(580.5 2785.5)" fill="none" stroke="#fff" stroke-width="1"/>
+                                </g>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-content">
+                    <div class="accordion-content_inner{% if champ.teamRewards %} has-team-rewards{% endif %}">
+                        <div class="left">
+                            <p class="champ-description">{{ champ.description }}</p>
+
+                            <div class="buttons show-tablet-only">
+                                <a href="{{ champ.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign up now</a>
                             </div>
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="/assets/images/logos/{{ champ.data.title | kebab }}.png" alt="{{ champ.data.title }}">
-                                </figure>
+
+                            <div class="key-features">
+                                <h4>Key Features</h4>
+
+                                <ul role="list">
+                                    {% for feature in champ.keyFeatures %}
+                                        <li>
+                                            <h5>{{ feature.header }}</h5>
+                                            <p>{{ feature.feature }}</p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
+
+                            {% if champ.teamRewards %}
+                            <div class="team-rewards">
+                                <h4>Team rewards</h4>
+                                <p>{{ champ.teamRewards }}</p>
+                            </div>
+                            {% endif %}
+
+                            <div class="buttons hide-tablet-only">
+                                <a href="{{ champ.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign up now</a>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            {% if champ.vipTiers %}
+                                <h4>VIP</h4>
+
+                                <ul class="vip" role="list">
+                                    {% for info in champ.vipTiers %}
+                                        <li>
+                                            <p><span>{{ info.tier }}</span>: {{ info.balance }}</p>
+                                            {% if info.note %}
+                                            <p><em>{{ info.note }}</em></p>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            <h4>Resources</h4>
+                            <ul role="list">
+                                {% for link in champ.links %}
+                                <li>
+                                    <a href="{{ link.link }}" target="_blank" rel="noopener" class="link-link">
+                                        {% if link.brand %}
+                                        <i class="fa-brands fa-{{ link.brand | kebab}}"></i>
+                                        {% elif link.website %}
+                                        <i class="fa-solid fa-globe"></i>
+                                        {% elif link.resource %}
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        {% endif %}
+
+                                        {% if link.shortLink %}
+                                        <p>/{{ link.shortLink }}</p>
+                                        {% elif link.resource %}
+                                        <p>{{ link.title }}</p>
+                                        {% else %}
+                                        <p>{{ link.link }}</p>
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
-            {% include "swiper-pagination.njk" %}
+<a id="signs" class="is-page-anchor"></a>
+<section class="section is-medium px-0" id="section-signs">
+    <div class="container is-text-centered is-max-tablet">
+        <h2 class="title"><span>Signs</span> of a platform closing</h2>
+        <p>There will come when a platform will show signs of coming to the end of its life. This section will showcase any platform that we think you should be aware of and the reasons why.</p>
+    </div>
+
+    <div class="cols">
+        <div class="left">
+            <p>There are several things that have happened identically in other platforms that have closed. It is important to note that these signs are not a dead given, but 9/10 it ends the same way.</p>
+
+            <ul>
+                <li>Upgraded VIP tiers</li>
+                <li>Special offers</li>
+                <li>Temporarily disabling withdrawals</li>
+                <li>Customer support suddenly not responding</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="image">
+                <img src="/assets/images/logos/canaan.png" alt="Canaan">
+            </div>
+            <div class="text">
+                <h4>Reasons to be aware</h4>
+                <p>It has been announced on 30th April 2024 that there are some special offers. These offers include seemingly generous, such as refer a friend and get a $15 bonus and deposit $136 and they will match it, doubling your money. I would advice taking the bulk of your investment out.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <a id="avoid" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-avoid">
-    <div class="container is-max-htablet">
-        <div class="section-header">
-            <p class="pre-title">Avoid</p>
-            <h2 class="title special-text">Who should I avoid?</h2>
-        </div>
+    <div class="container is-max-tablet">
+        <h2 class="title is-text-centered">Platforms to <span>avoid</span></h2>
 
-        <div class="swiper avoid-swiper">
-            <div class="swiper-wrapper">
-                {% for avoid in collections.avoids %}
-                <div class="swiper-slide">
-                    <div class="card platform-bad">
-                        <div class="card-information">
-                            <h3 class="title">{{ avoid.data.title }}</h3>
+        <div class="accordion-container">
+            {% for avoid in collections.avoids %}
+            <div class="accordion">
+                <div class="container is-max-widescreen accordion-inner">
+                    <div class="accordion-header">
+                        <h3 class="accordion-header_title">{{ avoid.data.title}}</h3>
 
-                            <p class="card-information_description">{{ avoid.data.avoidDescription }}</p>
+                        <div class="accordion-indicator">
+                            <p class="indicator-plus">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51">
+                                    <g id="Group_45" data-name="Group 45" transform="translate(-580.5 -2740.5)">
+                                        <line id="Line_22" data-name="Line 22" y2="51" transform="translate(606 2740.5)" fill="none" stroke="#fff" stroke-width="1"/>
+                                        <line id="Line_23" data-name="Line 23" x1="51" transform="translate(580.5 2766)" fill="none" stroke="#fff" stroke-width="1"/>
+                                    </g>
+                                </svg>
+                            </p>
+                            
+                            <p class="indicator-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="51" height="1" viewBox="0 0 51 1">
+                                    <g id="Group_44" data-name="Group 44" transform="translate(-580.5 -2785)">
+                                        <line id="Line_23" data-name="Line 23" x1="51" transform="translate(580.5 2785.5)" fill="none" stroke="#fff" stroke-width="1"/>
+                                    </g>
+                                </svg>
+                            </p>
                         </div>
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="/assets/images/logos/{{ avoid.data.title | kebab}}.png" alt="{{ avoid.data.title }}">
-                            </figure>
+                    </div>
+
+                    <div class="accordion-content">
+                        <div class="accordion-content_inner">
+                            <p>{{ avoid.data.avoidDescription }}</p>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-
-            {% include "swiper-pagination.njk" %}
+            {% endfor %}
         </div>
     </div>
 </section>
 
-<div class="is-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920.878 114.895" class="divider">
-        <path
-        element="path-to-animate"
-        d="M4276,2726.413H6196.878v114.895s-952.163-50.252-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z"
-        final-path="M4276,2726.413H6196.878v114.895s-959.106-153.2-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z" 
-        transform="translate(-4276 -2726.413)" fill="#fcf9f5"/>
-    </svg>
-</div>
-
-<a id="compare" class="is-page-anchor"></a>
-<section class="section is-medium" id="section-compare">
-    <div class="container is-max-htablet">
-        <div class="section-header">
-            <p class="pre-title">Compare</p>
-            <h2 class="title">Tell me about these platforms?</h2>
-        </div>
-
-        <div class="tabby">
-            <div class="tabs">
-                <ul role="list">
-                    {% for tab in collections.champs %}
-                        <li>
-                            <a href="#{{ tab.data.title | kebab }}" data-target="{{ tab.data.title | kebab }}"{% if tab.data.order === 1 %} class="is-selected"{% endif %}>{{ tab.data.title }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="tab-contents">
-                {% for comparison in collections.champs %}
-                <div class="tab-content{% if comparison.data.order === 1 %} is-selected{% endif %}" id="{{ comparison.data.title | kebab }}">
-                    <div class="tiles{% if comparison.data.vipTiers %} has-tiers{% endif %}">
-                        <div class="tile-title">
-                            <header>
-                                <figure class="image">
-                                    <img src="./assets/images/logos/{{ comparison.data.title | kebab }}.png" alt="{{ comparison.data.title }}">
-                                </figure>
-                                <h3>{{ comparison.data.title }}</h3>
-                            </header>
-                            
-                            <h4>{{ comparison.data.description }}</h4>
-
-                            <div class="buttons">
-                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                            </div>
-                        </div>
-
-                        {% if comparison.data.vipTiers %}
-                        <div class="tile-vip-tiers">
-                            <h4>VIP Tiers</h4>
-                            <p>{{ comparison.data.vipDescription }}</p>
-
-                            <ol role="list">
-                                {% for vipTier in comparison.data.vipTiers %}
-                                <li>
-                                    <p>
-                                        <strong>VIP Tier {{ vipTier.tier }}:</strong> {{ vipTier.balance }}{% if vipTier.note %} <br /> <em>({{ vipTier.note }})</em>{% endif %}</p>
-                                </li>
-                                {% endfor %}
-                            </ol>
-                            
-                            <div class="buttons mobile-only">
-                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        <div class="tile-info-small">
-                            <h4>Team Commissions and Referral Rewards:</h4>
-                            <p>{{ comparison.data.teamRewards }}</p>
-                            
-                            <div class="buttons mobile-only">
-                                <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                            </div>
-                        </div>
-
-                        <div class="tile-key-features">
-                            <h4>Key Features</h4>
-
-                            <div class="key-features">
-                                <ol role="list">
-                                    {% for keyFeature in comparison.data.keyFeatures %}
-                                    <li>
-                                        <h5>{{ keyFeature.header }}</h5>
-                                        <p>{{ keyFeature.feature }}</p>
-                                    </li>
-                                    {% endfor %}
-                                </ol>
-
-                                <div class="buttons mobile-only">
-                                    <a href="{{ comparison.data.referralLink }}" target="_blank" rel="noopener" class="button button-big button-primary">Sign up now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tile-links">
-                            <ul role="list">
-                                {% for social in comparison.data.socials %}
-                                <li>
-                                    <h5>{{ social.title }}</h5>
-                                    <a href="{{ social.link }}" target="_blank" rel="noopener" class="social-link">
-                                        <i class="fa-brands fa-{{ social.brand | kebab}}"></i>
-                                        <p>/{{ social.shortLink }}</p>
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-
-                            {% if comparison.data.website %}
-                            <h4>Official Website</h4>
-                            <a href="{{ comparison.data.website }}">{{ comparison.data.website }}</a>
-                            {% endif %}
-
-                            {% if comparison.data.resources %}
-                            <h4>Resources</h4>
-                            <ul role="list">
-                                {% for resource in comparison.data.resources %}
-                                <li>
-                                    {# <h5>{{ resource.icon }}</h5> #}
-                                    <a href="{{ resource.link }}" target="_blank" rel="noopener" class="resource-link">
-                                        <i class="{{ resource.icon }}"></i>
-                                        {{ resource.name }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="is-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1920.878 114.895" class="divider">
-        <path
-        element="path-to-animate"
-        d="M4276,2726.413H6196.878v114.895s-952.163-50.252-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z"
-        final-path="M4276,2726.413H6196.878v114.895s-959.106-153.2-1920.878,0C4276.319,2726.144,4276,2726.413,4276,2726.413Z" 
-        transform="translate(-4276 -2726.413)" fill="#fcf9f5"/>
-    </svg>
-</div>
-
-<a id="trust" class="is-page-anchor"></a>
+{# <a id="trust" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-trust">
-    <div class="container is-max-htablet">
-        <div class="section-header">
-            <p class="pre-title">Trust</p>
-            <h2 class="title">Proof of withdrawals</h2>
-        </div>
+    <div class="container">
+        <h2 class="title is-text-centered"><span>Proof</span> of withdrawals</h2>
 
         <div class="swiper trust-swiper">
             <div class="swiper-wrapper">
-                {% for proof in collections.champs %}
+                {% for proof in collections.all %}
                     {% if proof.data.proof %}
                     <div class="swiper-slide">
                         <figure class="image proof">
@@ -265,18 +318,15 @@ title: The Crypto Hub
             {% include "swiper-pagination.njk" %}
         </div>
     </div>
-</section>
+</section> #}
 
 <a id="contact" class="is-page-anchor"></a>
 <section class="section is-medium" id="section-contact">
-    <div class="container is-max-tablet">
-        <div class="section-header">
-            <p class="pre-title">Contact</p>
-            <h2 class="title">Contact Details</h2>
-        </div>
+    <div class="container is-max-desktop">
+        <h2 class="title is-text-centered"><span>Contact</span> Details</h2>
 
-        <div class="two-col">
-            <div class="contact-form">
+        <div class="cols">
+            <div class="left contact-form">
                 <h4><i class="fa-solid fa-envelope"></i> Send us a message</h4>
                 <form name="contact" netlify id="contact-form">
                     <input class="hidden" name="bot-field">
@@ -291,7 +341,7 @@ title: The Crypto Hub
                     </div>
                 </form>
             </div>
-            <div class="contact-socials">
+            <div class="right contact-socials">
                 <div>
                     <h4>Find us on Telegram</h4>
 

@@ -1,13 +1,6 @@
 @use '../abstracts/variables' as *;
 
 #section-trust {
-    // background: $black;
-    color: $white;
-
-    p.pre-title:before {
-        background: $green;
-    }
-
     .trust-swiper {
         padding-top: 1.5rem;
     }

@@ -7,7 +7,7 @@ referralLink: https://drilluxe.cc/?ref=Adam0115
 description: "With Drilluxe, the more power (Split Hash) you have, the more you can get."
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 tags: avoid
-avoidDescription: Hash Stopped working and nothing was being earned. Stay clear.
+avoidDescription: Hash stopped working, and there was no money coming in. Best to steer clear.
 
 keyFeatures:
  - 

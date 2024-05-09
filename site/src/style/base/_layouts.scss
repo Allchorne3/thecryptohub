@@ -6,7 +6,7 @@
         padding: 6.5rem 3.5rem;
 
         @include m.mobile {
-            padding: 2rem 1.5rem;
+            padding: 4rem 2rem;
         }
     }
 
@@ -14,16 +14,23 @@
         &-body {
             padding: 6.5rem 3.5rem;
 
+            @include m.tableth {
+                padding: 3rem;
+            }
+
             @include m.mobile {
-                padding-inline: 1.5rem;
+                // padding-inline: 1.5rem;
             }
         }
     }
 }
 
 .container {
-    max-width: 1440px;
-    margin-inline: auto;
+    max-width: 1152px;
+
+    &:not(.hero-body &) {
+        margin-inline: auto;
+    }
     
     &.is-max-widescreen {
         max-width: 1440px;
@@ -39,5 +46,20 @@
         max-width: 800px;
         margin-inline: auto;
     }
+}
 
+.cols {
+    display: flex;
+    align-items: center;
+
+    @include m.tableth {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    & > .left, 
+    & > .right {
+        flex: 1;
+        padding: 3rem;
+    }
 }

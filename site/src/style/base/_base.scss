@@ -10,11 +10,7 @@ html {
 }
 
 body {
-    background: $white;
-
-    @include m.tablet {
-        padding-top: 5.8rem;
-    }
+    background: $navy-dark;
 }
 
 figure.image {
@@ -26,15 +22,6 @@ figure.image {
 .is-divider {
     width: 100%;
     transform: translateY(-6.5px);
-}
-
-.logo {
-    figure.image {
-        svg {
-            max-width: 300px;
-            display: block;
-        }
-    }  
 }
 
 ol {
@@ -60,11 +47,12 @@ ol {
             display: grid;
             place-items: center;
             left: -10px;
-            top: 9px;
+            top: 12px;
             transform: translate(-50%, -50%);
             width: 30px;
             height: 30px;
-            background: $olive;
+            background: $navy-dark;
+            color: $white;
             z-index: -1;
             border-radius: 50%;
         }
@@ -80,7 +68,6 @@ ol {
     display: flex;
     gap: .5rem;
     align-items: center;
-    color: $black;
     border-radius: 50px;
     transition: border .3s ease-in-out;
 

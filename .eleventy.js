@@ -24,6 +24,11 @@ module.exports = function(eleventyConfig) {
             return 0;
         });
     });
+
+    // Current best collection
+    eleventyConfig.addCollection("currentBest", collection => {
+        return collection.getFilteredByTag("currentBest");
+    });
     
     // Platforms to avoid
     eleventyConfig.addCollection("avoids", collection => {

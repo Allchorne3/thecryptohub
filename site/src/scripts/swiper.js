@@ -37,10 +37,10 @@ import 'swiper/css/bundle'
 const setupSwiper = (container, options) => {
     const swiperContainer = document.querySelector(`${container}`)
     
-    // if(container) {
-    //     console.warn("No swiper container can be found")
-    //     return;
-    // }
+    if(!container) {
+        console.warn("No swiper container can be found")
+        return;
+    }
     
     const swiperOptions = {
         ...options,
@@ -57,11 +57,11 @@ const setupSwiper = (container, options) => {
         },
     }
 
-    if(swiperContainer.classList.contains('is-auto')) {
-        swiperOptions.autoplay = {
-            delay: swiperContainer.dataset.delay || 5000,
-        }
-    }
+    // if(swiperContainer.classList.contains('is-auto')) {
+    //     swiperOptions.autoplay = {
+    //         delay: swiperContainer.dataset.delay || 5000,
+    //     }
+    // }
 
     const swiper = new Swiper(container, swiperOptions)
 }

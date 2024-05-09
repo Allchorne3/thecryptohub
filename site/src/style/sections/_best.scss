@@ -1,0 +1,152 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as m;
+
+#section-best {
+    .tiles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "title keyFeatures"
+            "infoSmall keyFeatures"
+            "register links";
+        gap: 2.5rem;
+
+        &.has-tiers {
+            // grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
+            grid-template-areas: 
+                "title title keyFeatures keyFeatures"
+                "infoSmall infoSmall keyFeatures keyFeatures"
+                "register register vipTiers links";
+
+            @include m.widescreen {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: 
+                    "title infoSmall"
+                    "keyFeatures keyFeatures"
+                    "vipTiers links"
+                    "register register";
+            }
+
+            @include m.tablet {
+                @include m.widescreen {
+                    grid-template-columns: 1fr;
+                    grid-template-areas: 
+                        "title"
+                        "keyFeatures"
+                        "infoSmall"
+                        "vipTiers"
+                        "links"
+                        "register";
+                }
+            }
+        }
+
+        [class^="tile-"] {
+            background: rgba($navy, 0.5); /* Assuming $navy is a variable containing a color value */
+            border-radius: 6px;     /* Assuming $br-medium is a variable containing border radius value */
+            padding: 2rem;
+            position: relative;
+
+            h3 {
+                color: $blue-light;
+            }
+        }
+
+        .tile {
+            &-title {
+                grid-area: title;
+                display: flex;
+                gap: 20px;
+
+                figure.image {
+                    background: rgba($blue-light, .3);
+                    display: grid;
+                    place-items: center;
+                    padding: 1rem .5rem;
+                    border-radius: $br-medium;
+
+                    img {
+                        max-width: 100px;
+                    }
+                }
+            }
+
+            &-vip-tiers {
+                grid-area: vipTiers;
+
+                li {
+                    margin-bottom: .5rem;
+
+                    span {
+                        color: $blue-light;
+                    }
+                }
+            }
+            &-info-small {
+                grid-area: infoSmall;
+            }
+
+            &-key-features {
+                grid-area: keyFeatures;
+
+                h3 {
+                    margin-bottom: 2rem;
+                }
+
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 2rem;
+
+                    @include m.tablet {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+                    @include m.mobile {
+                        grid-template-columns: 1fr;
+                    }
+
+                    h5 {
+                        font-family: $ff-body;
+                        color: $blue-light;
+                        font-weight: normal;
+                        font-size: $fs-4;
+                    }
+                }
+            }
+
+            &-links {
+                grid-area: links;
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+
+                    a {
+                        color: $white;
+                        display: flex;
+                        align-items: center;
+                        gap: .15rem;
+
+                        i {
+                            color: $blue-light;
+                            margin-right: .5rem;
+                            font-size: $fs-2;
+                        }
+                    }
+                }
+            }
+
+            &-register {
+                grid-area: register;
+                background: $blue-light;
+                display: grid;
+                place-items: center;
+                color: $navy-dark;
+                font-size: $fs-3;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -2,54 +2,50 @@
 @use '../abstracts/mixins' as m;
 
 #section-contact {
-    background: $dark-black;
-
     @include m.mobile {
         padding-top: 4rem;
     }
+    
+    .cols {
+        padding: .5rem;
+        background: rgba($white, .02);
 
-    p.pre-title {
-        color: $blue;
-
-        &::before {
-            background: $white;
-        }
-    }
-
-    .two-col {
-        display: flex;
-        gap: 1rem;
-        border-radius: $br-medium;
-        padding: 2rem;
-        padding-right: 0;
-        background: rgba($antique-white, .9);
-
-        @include m.tablet {
-            flex-direction: column-reverse;
-            padding-right: 2rem;
-            gap: 2rem;
+        @include m.tableth {
+            flex-direction: column-reverse !important;
         }
 
         .contact {
             &-form,  
             &-socials {
-                flex: 1;
+                flex: 2;
 
                 h4 {
                     font-weight: $fw-300;
-                    color: $black;
                     margin-bottom: 1.5rem;
                     
                     i {
-                        font-size: $fs-2;
+                        font-size: $fs-3;
                         position: relative;
                         top: 3px;
                         margin-right: .5rem;
+                        color: $blue-light;
                     }
 
                     @include m.mobile {
                         font-size: $fs-4;
                     }
+                }
+            }
+
+            &-form {
+                flex: 3;
+
+                @include m.tableth {
+                    width: 100%;
+                }
+
+                @include m.mobile {
+                    padding: 1rem;
                 }
             }
 
@@ -70,6 +66,11 @@
                         max-width: 200px;
                     }
                 }
+
+                .social-link {
+                    justify-content: center;
+                    margin-top: 1rem;
+                }
             }
         }
     }
@@ -82,7 +83,7 @@
     
         & > div {
             text-align: left;
-            
+
             label {
                 margin-top: 10px;
                 margin-bottom: 5px;
@@ -106,16 +107,16 @@
 
         input,
         textarea {
-            $color: #D4D1CC;
-            padding: 10px 15px;
-            background: $color;
-            transition: all 0.3s ease-in-out;
+            padding-block: 10px;
+            background: none;
+            color: $white;
             border: none;
-            border-radius: 6px;
             width: 100%;
+            border-bottom: $border-light;
+            font-family: $ff-body;
 
             &::placeholder {
-                color: $black;
+                letter-spacing: 1px;
             }
             
             &:focus,
@@ -128,12 +129,13 @@
                 text-transform: uppercase;
                 font-weight: $fw-500;
                 margin-top: 1rem;
+                border-bottom: none;
             }
     
             &[type="reset"] {
-                $color: $off-white;
+                $color: rgba($white, .05);
                 background: $color;
-                color: $dark-black !important;
+                color: $white !important;
             
                 &:hover {
                     background: darken($color, 10%);
@@ -141,18 +143,21 @@
             }
 
             &[type="submit"] {
-                $color: $green;
-                background: $color;
-                color: $dark-black !important;
+                background: $gradient;
+                color: $white !important;
             
                 &:hover {
-                    background: darken($color, 10%);
+                    // background: darken($gradient, 10%);
                 }
             }
     
             &[type="date"] {
                 color: $white;
             }
+        }
+
+        input {
+            margin-bottom: 1rem;
         }
 
         .buttons {

@@ -9,14 +9,16 @@
 @use 'base/layouts';
 
 @use 'sections/header';
-@use 'sections/footer';
 @use 'sections/hero';
-@use 'sections/mvp';
+@use 'sections/best';
+@use 'sections/champs';
+@use 'sections/signs';
 @use 'sections/avoid';
-@use 'sections/compare';
 @use 'sections/trust';
 @use 'sections/contact';
+@use 'sections/footer';
 
 @use 'components/swiper';
 @use 'components/modal';
 @use 'components/hamburger';
+@use 'components/accordion';

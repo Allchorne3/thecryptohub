@@ -4,24 +4,42 @@
 /* typgraphy */
 body {
     font-family: $ff-main;
-    color: $black;
+    color: $white;
 
     h1, h2, h3, h4, h5, h6 {
         line-height: 1;
         margin-bottom: 1rem;
 
-        &.title {
-            text-transform: uppercase;
+        span {
+            color: $blue-light;
         }
     }
 
     h1 {
         font-size: $fs-0;
         line-height: 1.2;
+        letter-spacing: 2px;
+
+        @include m.tableth {
+            font-size: 3rem;
+        }
+
+        @include m.mobile {
+            font-size: $fs-1;
+        }
     }
     
     h2 {
-        font-size: $fs-2;
+        margin-bottom: 6rem;
+        
+        &.title {
+            font-size: calc($fs-1 + 10px);
+
+            @include m.mobile {
+                font-size: $fs-1;
+                margin-bottom: 3rem;
+            }
+        }
     }   
     
     h3 {
@@ -38,6 +56,10 @@ body {
         line-height: 1;
         margin-bottom: .2rem;
         margin-top: .2rem;
+    }
+
+    p, ul {
+        font-family: $ff-body;
     }
 
     p {
@@ -90,6 +112,15 @@ body {
             @include m.mobile {
                 font-size: $fs-1 !important;
             }
+        }
+    }
+    
+    h1 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+        .line {
+            opacity: 0;
+            transform: translateY(90px);
         }
     }
 }

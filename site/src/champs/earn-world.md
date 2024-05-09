@@ -40,18 +40,16 @@ keyFeatures:
     header: Automated system
     feature: This platform allows you to do automated trading, so you dont have to
 
-socials:
+links:
  - 
     brand: Telegram
-    title: Telegram group
     link: https://t.me/+ioPau24fPU9iYTE0
     shortLink: +ioPau24fPU9iYTE0
-
-resources:
- -
-    name: Step by step guide
-    icon: fa-solid fa-file-lines
+ - 
+    website: true
+    link: https://earn.world/
+ - 
+    resource: true
+    title: Guide
     link: /assets/earn-world-step-by-step-guide.pdf
-
-website: https://earn.world/
 ---

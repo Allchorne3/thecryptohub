@@ -6,12 +6,23 @@
 	/////////////////////// */
 
 #footer {
-	color: $white;
+	position: relative;
 	padding: 4rem 6rem;
 	width: 100%;
 	display: flex;
 	gap: 2rem;
-	border-top: solid 2px rgba($antique-white, .5);
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to top, rgba(black, .3) 5%, transparent, transparent 100%);
+		isolation: isolate;
+		z-index: -1;
+	}
 
 	@include m.tablet {
 		flex-direction: column;
@@ -28,13 +39,19 @@
 	.logo {
 		flex: 1;
 
-		figure.image {
-			margin-bottom: 1rem;
+		// figure.image {
+		// 	margin-bottom: 1rem;
 
-			svg {
-				width: 300px;
-				max-width: 100%;
-			}
+		// 	svg {
+		// 		width: 300px;
+		// 		max-width: 100%;
+		// 	}
+		// }
+
+		h2 {
+			font-size: $fs-1;
+			color: $blue-light;
+			margin-bottom: 2rem;
 		}
 
 	}
