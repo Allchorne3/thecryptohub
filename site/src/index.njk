@@ -96,6 +96,9 @@ title: The Crypto Hub
                             <p>{{ link.link }}</p>
                             {% endif %}
                         </a>
+                        {% if link.note %}
+                        <p><em>({{ link.note }})</em></p>
+                        {% endif %}
                     </li>
                     {% endfor %}
                 </ul>
