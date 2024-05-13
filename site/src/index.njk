@@ -19,8 +19,9 @@ heroReferral: DSL
                 <a href="#best" class="button outlined">Get started</a>
 
                 {% for ref in collections.currentBest %}
-                    {% if ref.data.title === heroReferral %}
-                    <a href="{{ ref.data.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Exclusive Signup Link</a>
+                    {% set ref = ref.data %}
+                    {% if ref.title === heroReferral %}
+                    <a href="{{ ref.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign up to {{ ref.title }}</a>
                     {% endif %}
                 {% endfor %}
             </div>
