@@ -53,5 +53,4 @@ links:
     resource: true
     title: Getting started guide
     link: https://quantify-calculator.co.uk/posts/getting-started/
-    note: "Click the register button on this website first"
 ---

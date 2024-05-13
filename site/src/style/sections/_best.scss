@@ -120,7 +120,8 @@
                 grid-area: links;
                 ul {
                     display: grid;
-                    grid-template-columns: repeat(2, 1fr);
+                    // grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
                     gap: 1rem;
 
                     a {
@@ -146,6 +147,10 @@
                 color: $navy-dark;
                 font-size: $fs-3;
                 text-transform: uppercase;
+
+                @include m.mobile {
+                    font-size: $fs-4;
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 ---
 layout: base.njk 
 title: The Crypto Hub
+heroReferral: DSL
 ---
 
 <section class="section hero">
@@ -15,7 +16,13 @@ title: The Crypto Hub
             <p>Discover the top Crypto platforms! Access unbiased reviews to find the best options and steer clear of potential risks. Start your journey here at The Crypto Hub!</p>
             
             <div class="buttons">
-                <a href="#best" class="button button-primary">Get started</a>
+                <a href="#best" class="button outlined">Get started</a>
+
+                {% for ref in collections.currentBest %}
+                    {% if ref.data.title === heroReferral %}
+                    <a href="{{ ref.data.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Exclusive Signup Link</a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -103,6 +103,10 @@
                 animation: fadeup .5s ease-in-out forwards;
                 animation-delay: .4s;
 
+                @include m.mobile {
+                    flex-direction: column-reverse;
+                }
+
                 a {
                     font-size: $fs-4;
                 }
