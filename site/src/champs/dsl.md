@@ -1,10 +1,11 @@
 ---
-order: 1
+avoidOrder: 1
 title: DSL
 launchDate: 2024-05-02
 platformType: Short term and long term investment. 
 referralLink: https://dslvip.com/index.html#/register/528374
-tags: currentBest
+tags: avoid
+avoidDescription: "Withdrawals are starting to be stopped. This is a sign of it closing down. Stay away"
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 description: "This platform works identically to WDC. It offers a good percentage back which means that it’s good for a short or long term investment."
 
