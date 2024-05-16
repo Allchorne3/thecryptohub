@@ -1,6 +1,6 @@
 ---
 title: Drilluxe
-avoidOrder: 1
+avoidOrder: 2
 launchDate: 2023-01-01
 platformType: Long-Term Crypto Mining
 referralLink: https://drilluxe.cc/?ref=Adam0115
