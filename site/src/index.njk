@@ -198,6 +198,7 @@ heroReferral: DSL
                                 </ul>
                             {% endif %}
 
+                            {% if champ.links %}
                             <h4>Resources</h4>
                             <ul role="list">
                                 {% for link in champ.links %}
@@ -222,6 +223,7 @@ heroReferral: DSL
                                 </li>
                                 {% endfor %}
                             </ul>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
