@@ -203,18 +203,22 @@ heroReferral: YIPTG
                             <ul role="list">
                                 {% for link in champ.links %}
                                 <li>
-                                    <a href="{{ link.link }}" target="_blank" rel="noopener" class="link-link">
+                                    <a href="{{ link.link }}"{% if not link.sameTab %}target="_blank" rel="noopener"{% endif %} class="link-link">
                                         {% if link.brand %}
                                         <i class="fa-brands fa-{{ link.brand | kebab}}"></i>
                                         {% elif link.website %}
                                         <i class="fa-solid fa-globe"></i>
                                         {% elif link.resource %}
                                         <i class="fa-solid fa-file-lines"></i>
+                                        {% elif link.custom %}
+                                        <i class="{{ link.icon }}"></i>
                                         {% endif %}
 
                                         {% if link.shortLink %}
                                         <p>/{{ link.shortLink }}</p>
                                         {% elif link.resource %}
+                                        <p>{{ link.title }}</p>
+                                        {% elif link.custom %}
                                         <p>{{ link.title }}</p>
                                         {% else %}
                                         <p>{{ link.link }}</p>

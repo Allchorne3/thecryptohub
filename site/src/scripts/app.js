@@ -1,8 +1,11 @@
 import Modal from 'Scripts/modal';
+import C12Calc from 'Scripts/c12-calc';
 import Animations from 'Scripts/animations';
 import InlineSVG from "Utils/js-inlinesvg"
 import Accordion from 'Scripts/accordion'
 import setupSwiper from './swiper';
+
+const docElement = document.documentElement;
 
 document.addEventListener('DOMContentLoaded', () => {
 	let lastScrollTop = 0;
@@ -65,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Run functions
 	Modal.setupModal()
 	Animations.setupAnimations()
+
+	if (docElement.id === 'page-c12-calculator') {
+		C12Calc.setupC12Calc()
+	}
+
+	
 	const accordionChamps = new Accordion('#section-champs');
 	const accordionAvoid = new Accordion('#section-avoid');
 
