@@ -1,11 +1,12 @@
 ---
-order: 3
+avoidOrder: 1
 title: AKA
 launchDate: 2024-02-23
 platformType: Long-Term Investment Opportunity
 referralLink: https://member.aka07.com/signup?p=dQrZHs5o
 description: "AKA offers a long-term investment option with various plans."
-tags: champ
+tags: avoid
+avoidDescription: Withdrawals have been stopped. Stay away.
 
 
 keyFeatures:
