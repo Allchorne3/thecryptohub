@@ -8,17 +8,6 @@ tags: champ
 description: "A good referral platform where you can earn substantial bonuses with a minimum deposit of just 10 USDT. Start earning daily rewards automatically."
 teamRewards: "The platform incentivizes user acquisition through team commissions and referral rewards. Details available on the official website."
 
-vipTiers:
- - 
-    tier: Tier 1
-    balance: $35 - $300
- - 
-    tier: Tier 2
-    balance: $300 - $2000
- - 
-    tier: Tier 3
-    balance: $300 - $200
-
 keyFeatures:
 -
     header: Withdrawal Fee
