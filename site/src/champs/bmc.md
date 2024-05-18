@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: BMC
 launchDate: 2024-01-01
 platformType: A long term investment platform
