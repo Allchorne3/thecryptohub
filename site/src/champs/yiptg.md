@@ -29,7 +29,7 @@ keyFeatures:
     feature: Access your invested capital at any time
  - 
     header: Minimum Deposit
-    feature: Start with as little as $30.
+    feature: Start with $100.
  - 
     header: Daily Profit Potential
     feature: Earn daily returns ranging from 2% to 4.3%.
