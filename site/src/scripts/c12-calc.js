@@ -3,32 +3,32 @@ const setupC12Calc = () => {
     const balanceInput = form.querySelector('.balance')
     const daysInput = form.querySelector('.days')
     const result = document.querySelector('.result h3 span')
-
-    if(!form) {
-        console.warn("No C12 can be found!")
-        return
+    
+    balanceInput.addEventListener('input', () => showFinal())
+    daysInput.addEventListener('input', () => showFinal())
+    
+    const calc = (starting, days) => {
+      // Initial values
+      let initialAmount = starting;
+      let percentageIncrease = 0.12;
+    
+      // Calculate 12% of the initial amount
+      let increase = initialAmount * percentageIncrease;
+    
+      // Multiply the increase by 12
+      let totalIncrease = increase * days;
+    
+      // Add the initial amount
+      let finalAmount = totalIncrease + initialAmount;
+      
+      return finalAmount;
     }
     
-    balanceInput.addEventListener('input', (e) =>  showFinal())
-    daysInput.addEventListener('input', (e) => showFinal())
-    
-    const earn = (starting, days) => {
-        let balance = starting
-        const percent = 0.12
-        
-        for (let i = 0; i < days; i++) {
-            balance += balance * percent
-            console.log(`Day ${i + 1}: $${balance.toFixed(2)}`)
-        }
-        
-        return balance
-    }
-
     const showFinal = () => {
-        const starting = Number(balanceInput.value)
-        const days = Number(daysInput.value)
-        const earnings = earn(starting, days)
-        result.textContent = `$${earnings.toFixed(2)}`
+      const starting = Number(balanceInput.value)
+      const days = Number(daysInput.value)
+      const calculate = calc(starting, days)
+      result.textContent = calculate.toFixed(2)
     }
 }
 
