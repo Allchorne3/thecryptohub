@@ -28,7 +28,7 @@ const setupC12Calc = () => {
       const starting = Number(balanceInput.value)
       const days = Number(daysInput.value)
       const calculate = calc(starting, days)
-      result.textContent = calculate.toFixed(2)
+      result.textContent = `$${calculate.toFixed(2)}`
     }
 }
 
