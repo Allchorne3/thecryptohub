@@ -17,18 +17,15 @@ const setupC12Calc = () => {
     
       // Multiply the increase by 12
       let totalIncrease = increase * days;
-    
-      // Add the initial amount
-      let finalAmount = totalIncrease + initialAmount;
-      
-      return finalAmount;
+  
+      return totalIncrease;
     }
     
     const showFinal = () => {
       const starting = Number(balanceInput.value)
       const days = Number(daysInput.value)
       const calculate = calc(starting, days)
-      result.textContent = `$${calculate.toFixed(2)}`
+      result.textContent = calculate.toFixed(2)
     }
 }
 
