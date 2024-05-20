@@ -22,12 +22,21 @@
         display: grid;
         place-items: center;
         text-align: center;
+        padding: 1rem;
+
+        h1 {
+            margin-bottom: 2rem;
+        }
         
         form {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
             gap: 1rem;
             font-family: $ff-body;
+
+            @include m.mobile {
+                flex-direction: column;
+                gap: 0;
+            }
             
             .field {      
                 text-align: left;
@@ -42,15 +51,7 @@
                     border: none;
                     margin-bottom: 1rem;
                     font-size: $fs-5;
-                    
-                    &[type="submit"] {
-                        width: 100%;
-                        font-weight: bold;
-                        text-transform: uppercase;
-                        background: $blue-light;
-                        color: white;
-                        display: none;
-                    }
+                    width: 100%;
                 }
                 
                 label {

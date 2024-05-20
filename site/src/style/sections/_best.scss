@@ -11,6 +11,16 @@
             "register links";
         gap: 2.5rem;
 
+        @include m.tablet {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+                "title"
+                "keyFeatures"
+                "infoSmall"
+                "links"
+                "register";
+        }
+
         &.has-tiers {
             // grid-template-columns: repeat(4, 1fr);
             grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
@@ -29,16 +39,14 @@
             }
 
             @include m.tablet {
-                @include m.widescreen {
-                    grid-template-columns: 1fr;
-                    grid-template-areas: 
-                        "title"
-                        "keyFeatures"
-                        "infoSmall"
-                        "vipTiers"
-                        "links"
-                        "register";
-                }
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "title"
+                    "keyFeatures"
+                    "infoSmall"
+                    "vipTiers"
+                    "links"
+                    "register";
             }
         }
 

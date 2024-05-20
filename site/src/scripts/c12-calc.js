@@ -9,13 +9,8 @@ const setupC12Calc = () => {
         return
     }
     
-    balanceInput.addEventListener('input', (e) => {
-        e.preventDefault()
-        const starting = Number(balanceInput.value)
-        const days = Number(daysInput.value)
-        const earnings = earn(starting, days)
-        result.textContent = `$${earnings.toFixed(2)}`
-    })
+    balanceInput.addEventListener('input', (e) =>  showFinal())
+    daysInput.addEventListener('input', (e) => showFinal())
     
     const earn = (starting, days) => {
         let balance = starting
@@ -23,9 +18,17 @@ const setupC12Calc = () => {
         
         for (let i = 0; i < days; i++) {
             balance += balance * percent
+            console.log(`Day ${i + 1}: $${balance.toFixed(2)}`)
         }
         
         return balance
+    }
+
+    const showFinal = () => {
+        const starting = Number(balanceInput.value)
+        const days = Number(daysInput.value)
+        const earnings = earn(starting, days)
+        result.textContent = `$${earnings.toFixed(2)}`
     }
 }
 
