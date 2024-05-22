@@ -75,6 +75,42 @@
                 }
             }
         }
+
+        .accordion {
+            &:hover h3 {
+                left: 0;
+            }
+
+            &-container {
+                display: none;
+            }
+
+            &-content_inner {
+                padding: 0 2rem 2rem;
+            }
+
+            ul {
+                &:empty {
+                    display: none;
+                }
+
+                text-align: left;
+
+                li {
+                    background: rgba($blue-light, .3);
+                    color: $white;
+                    padding: .5rem;
+                    border-radius: 11px;
+                    margin-bottom: .5rem;
+                    overflow: hidden;
+
+                    span {
+                        font-weight: $fw-600;
+                        padding: 1rem
+                    }
+                }
+            }
+        }
     }
 
     footer {

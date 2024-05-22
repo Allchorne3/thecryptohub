@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	const accordionChamps = new Accordion('#section-champs');
 	const accordionAvoid = new Accordion('#section-avoid');
+	const accordionCalc = new Accordion('#section-calc');
 
 	const handleMouseMove = e => {
 		const { currentTarget: target } = e;
