@@ -5,7 +5,7 @@ launchDate: 2024-02-18
 platformType: Long-Term Investment Platform
 referralLink: https://h5.yiptg.top/user/reg?inviteCode=6M2BVG
 proof: true
-tags: currentBest
+tags: champ
 description: "YIPTG offers a platform designed for long-term investment opportunities."
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 
