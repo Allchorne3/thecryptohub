@@ -31,6 +31,10 @@ keyFeatures:
 
 links:
  - 
+    brand: Telegram
+    link: https://t.me/Antmineofficialchannel
+    shortLink: Antmineofficialchannel
+ - 
     website: true
     link: https://antm.top/
 ---
