@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: Ant Mining
 launchDate: 2024-05-02
 platformType: Long-Term Mining Platform
