@@ -4,7 +4,7 @@ title: BTC Mining
 launchDate: 2024-03-24
 platformType: Long-Term Mining Platform
 referralLink: https://btcmmining.cc/account/signup?c=7Ciq6kNC
-tags: champ
+tags: cham
 description: "BTC mining offers a free to start mining service. Join now to get a free mining and a 5usdt bonus machine on sign up."
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. Every time a lower-level user deposits, the upper-level user can get a 10% reward each time. More information is accessible on the official website."
 
