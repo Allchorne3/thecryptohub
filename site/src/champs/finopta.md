@@ -4,7 +4,7 @@ title: Finopta
 launchDate: 2023-01-10
 platformType: Investment Plans with Daily Returns
 referralLink: https://finopta.top/user/reg2/?inviteCode=PRNDE2
-tags: champ
+tags: cham
 description: "Finopta offers investment plans with daily returns."
 teamRewards: "The platform incentivizes user acquisition through team commissions and referral rewards. Details available on the official website."
 
