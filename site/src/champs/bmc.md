@@ -33,4 +33,11 @@ keyFeatures:
 -
     header: Level 3 commission
     feature: 3%
+
+links:
+ - 
+    brand: Telegram
+    link: https://t.me/projectBMC
+    shortLink: projectBMC
+ - 
 ---

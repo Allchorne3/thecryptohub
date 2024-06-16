@@ -6,21 +6,33 @@ title: The Crypto Hub
 <section class="section hero">
     <div class="hero-body">
         <div class="content">
-            <div class="text-wrapper">
-                <h1>Struggling to make sense</h1>
-                <h1>of <span>cryptocurrency</span></h1>
-                <h1>platforms?</h1>
-            </div>
+            <div>
+                <div class="left">
+                    <div class="text-wrapper">
+                        <h1>Struggling to make sense</h1>
+                        <h1>of <span>cryptocurrency</span></h1>
+                        <h1>platforms?</h1>
+                    </div>
 
-            <p>Discover the top Crypto platforms! Access unbiased reviews to find the best options and steer clear of potential risks. Start your journey here at The Crypto Hub!</p>
-            
-            <div class="buttons">
-                <a href="#champs" class="button outlined">Get started</a>
+                    <p>Discover the top Crypto platforms! Access unbiased reviews to find the best options and steer clear of potential risks. Start your journey here at The Crypto Hub!</p>
+                    
+                    <div class="buttons">
+                        <a href="#champs" class="button outlined">Get started</a>
 
-                {% for ref in collections.currentBest %}
-                    {% set ref = ref.data %}
-                    <a href="{{ ref.referralLink }}" target="_blank" rel="noopener" class="button button-primary">{{ ref.title }} signup</a>
-                {% endfor %}
+                        {% for ref in collections.currentBest %}
+                            {% set ref = ref.data %}
+                            <a href="{{ ref.referralLink }}" target="_blank" rel="noopener" class="button button-primary">{{ ref.title }} signup</a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="right">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/23uh7jsY0ao?si=ZLku2dN1Y-Vn1XN5" title="Get started with BMC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    <div class="buttons">
+                        <a href="https://t.me/projectBMC" target="_blank" rel="noopener" class="button button-primary">BMC Telegram</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

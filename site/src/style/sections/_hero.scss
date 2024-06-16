@@ -6,7 +6,7 @@
     position: relative;
 
     @include m.tablet {
-        height: 100vh;
+        height: auto;
     }
 
     &:before {
@@ -61,6 +61,28 @@
             max-width: 1440px;
             margin-inline: auto;
 
+            & > div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem;
+
+                @include m.widescreen {
+                    flex-direction: column;
+                    text-align: center;
+
+                    iframe {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .right {
+                    align-content: flex-end;
+                }
+            }
+
             .text-wrapper {
                 clip-path: polygon(0 0,  100% 0, 100% 100%, 0 100%);
                 
@@ -102,6 +124,10 @@
                 transform: translateY(15px);
                 animation: fadeup .5s ease-in-out forwards;
                 animation-delay: .4s;
+
+                @include m.widescreen {
+                    justify-content: center;
+                }
 
                 @include m.mobile {
                     flex-direction: column-reverse;

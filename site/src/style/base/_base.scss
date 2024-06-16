@@ -11,10 +11,15 @@ html {
 
 body {
     background: $navy-dark;
+
+    @include m.tablet {
+        padding-top: 100px;
+    }
 }
 
 figure.image {
-    img {
+    img,
+    iframe {
         max-width: 100%;
     }
 }
