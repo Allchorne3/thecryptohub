@@ -33,6 +33,9 @@ keyFeatures:
 -
     header: Level 3 commission
     feature: 3%
+-
+    header: Bonus 10USDT
+    feature: Deposit 50usdt and get a free 10USDT. (Contact BMC on telegram to get it)
 
 links:
  - 
