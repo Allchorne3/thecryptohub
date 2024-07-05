@@ -1,6 +1,6 @@
 ---
 order: 2
-title: GNC Moning
+title: GNC Mining
 launchDate: 2024-06-25
 platformType: Long-Term crypto miner
 referralLink: https://gncmining.com/account/signup?c=CYNujlH4
