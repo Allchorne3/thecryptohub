@@ -1,13 +1,8 @@
 ---
 order: 2
 title: BMC
-launchDate: 2024-01-01
-platformType: A long term investment platform
-referralLink: https://bmcenergy.org/#/?c=SND8KE
 tags: avoid
 avoidDescription: "Platform has closed down"
-description: "A good referral platform where you can earn substantial bonuses with a minimum deposit of just 10 USDT. Start earning daily rewards automatically."
-teamRewards: "The platform incentivizes user acquisition through team commissions and referral rewards. Details available on the official website."
 
 keyFeatures:
 -
