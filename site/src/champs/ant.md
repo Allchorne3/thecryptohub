@@ -1,12 +1,11 @@
 ---
-order: 2
+order: 5
 title: Ant Mining
 launchDate: 2024-05-02
 platformType: Long-Term Mining Platform
 referralLink: https://antm.top/account/signup?c=8h54K2Qa
 tags: champ
-description: "Ant mining offers a free to start mining service. Join now to get a free mining machine on sign up.
-."
+description: "Ant mining offers a free to start mining service. Join now to get a free mining machine on sign up.."
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 
 keyFeatures:

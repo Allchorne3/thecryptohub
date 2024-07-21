@@ -4,9 +4,10 @@ title: GNC Mining
 launchDate: 2024-06-25
 platformType: Long-Term crypto miner
 referralLink: https://gncmining.com/account/signup?c=CYNujlH4
-tags: currentBest
+tags: avoid
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 description: "GNC Mining offers a free to start mining service. Join now to get a free mining machine worth 10USDT on sign up."
+avoidDescription: "The platform has shut down for a second time."
 
 vipTiers:
  - 

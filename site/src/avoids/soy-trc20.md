@@ -4,9 +4,10 @@ title: SoyTRC20
 launchDate: 2023-12-04
 platformType: Short-term money maker platform
 referralLink: https://soytrc20.com/#/register?ic=816835
-tags: champ
+tags: avoi
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 description: "SoyTRC20 is a short-term money making platform. Deposit your money in, make your profit and ride the risk "
+avoidDescription: "Platform shut down"
 
 vipTiers:
  - 

@@ -168,7 +168,7 @@ title: The Crypto Hub
                 <div class="accordion-content">
                     <div class="accordion-content_inner{% if champ.teamRewards %} has-team-rewards{% endif %}">
                         <div class="left">
-                            <p class="champ-description">{{ champ.description }}</p>
+                            <p class="champ-description">{{ champ.description | safe}}</p>
 
                             <div class="buttons show-tablet-only">
                                 <a href="{{ champ.referralLink }}" target="_blank" rel="noopener" class="button button-primary">Sign up now</a>
@@ -206,7 +206,10 @@ title: The Crypto Hub
                                 <ul class="vip" role="list">
                                     {% for info in champ.vipTiers %}
                                         <li>
+                                            {% if info.tier %}
                                             <p><span>{{ info.tier }}</span>: {{ info.balance }}</p>
+                                            {% endif %}
+                                            
                                             {% if info.note %}
                                             <p><em>{{ info.note }}</em></p>
                                             {% endif %}
