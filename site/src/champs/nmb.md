@@ -5,7 +5,7 @@ launchDate: 2024-06-05
 platformType: Stable long-term quantifing app
 referralLink: https://www.nmbtech.net/register?ic=v60tjq
 proof:
-tags: champ
+tags:
 teamRewards: "The platform encourages user acquisition by offering team commissions and referral rewards. More information is accessible on the official website."
 description: "Nmb is a stable quantifing app that can earn you up to 4.6% per day on your daily income"
 
